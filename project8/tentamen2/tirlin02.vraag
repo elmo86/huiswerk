@@ -1,0 +1,19 @@
+!version 1
+# Dit document bevat een paar voorbeeld vragen en wat syntax die het programma begrijpt
+nTIRLIN01
+iLinux voor beginners eindtentamen
+
+!rand_andwoorde
+!rand_vragen
+
+!NEXT
+?Wat is linux
+t5000
+p1
+<test1.jpg
+>A,B,C
++Een OS (Operating System)
+-Een pak jogert bij de supermarkt
+-Een onderdeel van Windows
+
+!END

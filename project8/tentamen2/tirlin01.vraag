@@ -1,0 +1,46 @@
+!version 1
+# Dit document bevat een paar voorbeeld vragen en wat syntax die het programma begrijpt
+nTIRLIN01
+iLinux voor beginners eindtentamen
+
+!rand_andwoorde
+!rand_vragen
+
+!NEXT
+?Wat is linux
+t5000
+p1
+<./test1.jpg
+>A,B,C
++Een OS (Operating System)
+-Een pak jogert bij de supermarkt
+-Een onderdeel van Windows
+
+!NEXT
+?What is the airspeed velocity of an unladen swallow
+t5000
+<./test2.jpg
+p1
+>A,B
++African
++European
+
+!NEXT
+?War isn't about who's right, but about who's...
+t5000
+p1
+>A,B,C,D
+-Right
++Left
+-Up
+-Down
+
+!NEXT
+?Wat is het antwoord op deze vraag
+t5000
+p1
++Dit antwoord
+-Een ander antwoord
+-Anders
+
+!END

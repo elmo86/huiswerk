@@ -1,0 +1,99 @@
+import java.io.*;
+import java.util.*;
+
+public class app
+{
+    public static void main(String args[])
+    {
+	String vragen_f = "./tirlin0.vraag";
+	String layout_f = "./tirlin01.styl";
+
+	boolean rand_andwoorde = false;
+	boolean rand_vragen = false;
+
+	// Info over vraagen lijst
+	String Naam = "";
+	String Info  = "";
+
+	// Lijst met alle vragen
+	List<Vraag> vragen = new ArrayList<Vraag>();
+
+	System.out.println("Programma starten");
+
+	// Load screen starten
+	LoadScreen.Update("Hallo allemaal", 10);
+
+	// Slectie van de vragen vint plaats in andere app
+
+	// Vragen laden	
+	try {
+	    BufferedReader br = new BufferedReader(new FileReader(vragen_f));
+	    String line = "";
+	    while((line = br.readLine()) != null) {
+		if(line.length() < 1) continue;
+		
+		String command = line.substring(1);
+		
+		switch(line.charAt(0)) {
+		case '!': // Speciaal command
+		    // Comandows verder opdelen hier (extra switch)
+		    /*switch(command.toLowerCase()) {
+		    case "rand_andwoorde": rand_andwoorde = true;  break;
+		    case "rand_vragen": rand_vragen = true; break;
+		    case "next": // Nieuwe vraag class defineren */
+			vragen.add(new Vraag());
+			/*break;
+			}*/
+		    break;
+		case 'n': // Naam van de toets
+		    Naam  = command;
+		    break;
+		case 'i': // Info over toets
+		    Info = command;
+		    break;
+// --------------------------------------------------- 	    
+		case '?': // De vraag die gestelt woord (moet een !NEXT aan vooraf zijn gegaan)
+		    vragen.get(vragen.size()-1).setVraag(command);
+		    break;
+		case 't': // De tijd die voor de vraag staat
+		    vragen.get(vragen.size()-1).setTijd(command);
+		    break;
+		case 'p': // Aantal punten dat de vraag oplevert
+		    vragen.get(vragen.size()-1).setPunten(command);
+		    break;
+		case '>': // Opschrift op de buttons (Comma geschijden)
+		    vragen.get(vragen.size()-1).setButtons(command);
+		    break;
+		case '+': // Een juist andwoord (bij meerdere + telt de laaste + als juiste andwoord)
+		    vragen.get(vragen.size()-1).addAndwoord(command, true);
+		    break;
+		case '-': // Verkeert andwoord
+		    vragen.get(vragen.size()-1).addAndwoord(command, false);
+		    break;
+		}
+	    }
+	}
+	catch(IOException ex) {
+	    // TST
+	}
+	finally {
+	    //br.Close();
+	}
+
+	// Vragen gereet maken
+	//All vragen in loop doorlopen en in een array dumpen
+
+	//vragen andwoorden random sorteren
+	//vragen random sorteren
+
+	// Welkoms scherm tonen
+
+	// Vragen tonen
+	/*for() {
+	    vragen.getLast().Show();
+	    }*/
+	
+	System.out.println("Afnamen software beindigt");
+	System.exit(0); // Force exit
+    }
+}
