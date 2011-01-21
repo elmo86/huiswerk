@@ -43,7 +43,7 @@ public class app
                     else if(command.toLowerCase().equals("static_vragen")) rand_vragen = false;
                     else if(command.toLowerCase().equals("next"))
                     {
-                        if (rand_andwoorde == true) {
+                        if (rand_andwoorde == true && vragen.size() > 0) {
                             vragen.get(vragen.size()-1).Shuffel();
                         }
 
