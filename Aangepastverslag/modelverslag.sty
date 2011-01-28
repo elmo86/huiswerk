@@ -1,0 +1,80 @@
+\usepackage[dutch]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{rotating}
+%\usepackage{amsfonts}
+%\usepackage{eurosym}
+%\newcommand{\eurom}{\ensuremath{\text{\euro{}}}}
+% Als fonts niet correct zijn in het PDF bestand, gebruik: 
+\usepackage{pslatex} 
+% Om het palatino font te gebruiken:
+%\usepackage{mathpazo}
+% Om het times roman font te gebruiken:
+%\usepackage{mathptmx}
+% Voor andere fonts, see http://www.tug.org/fonts/
+\newcommand{\HR}{Hogeschool Rotterdam}
+\newcommand{\TI}{Technishe Informatica}
+\newcommand{\INF}{Informatica}
+\setlength{\parindent}{0pt}  % Europese alinea's    
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\selectlanguage{dutch}
+\sloppy
+\ifpublic %publiceerbare versie verslag: zonder evaluatie en bijlagen
+  \newcommand{\hoofdstuk}[1]{\large\textbf{ \\ \\#1}}
+  \newcommand{\paragraaf}[1]{\textbf{ \\#1 \\}}
+  \newcommand{\samenvatting}[1]
+       {\begin{center}\normalsize{\textbf{Samenvatting}}\end{center}}
+  \newcommand{\titelblad}[7]
+      {\begin{center}\textbf{#1}\end{center}
+       \begin{center}\footnotesize{#2}\end{center}
+       \begin{center}\footnotesize{#5}\end{center}
+       \begin{center}\footnotesize{\HR{} -- Opleiding `#4'}\end{center}}
+\else     %normale versie verslag
+  \newcommand{\hoofdstuk}[1]{\addcontentsline{toc}{chapter}{#1}\chapter*{#1}}
+  \newcommand{\paragraaf}[1]{\addcontentsline{toc}{section}{#1}\section*{#1}}
+  \newcommand{\samenvatting}[1]{\hoofdstuk{Samenvatting}}
+  \newcommand{\bijlage}[1]{\chapter{#1}}
+  \textheight=22cm
+  \textwidth=15cm
+  \newcommand{\titelblad}[7]{%
+   \thispagestyle{empty}
+   \begin{center}
+   \vspace{2.0cm}
+   \textbf{\Large #1\\}
+   \vspace{1.0cm}
+   van \\
+   \vspace{1.0cm}
+   #2 \\ (#3) \\
+   \vspace{2.0cm}
+   \includegraphics[width=2cm]{plaatjes/logohr.png} \\
+   \vspace{1.0cm}
+   {\small CMI-Opleiding \emph{#4} -- \HR} \\
+   \vspace{2.0cm}
+   #5 \\
+   \vspace{\fill}
+   \end{center}
+   {\footnotesize 
+   \begin{tabular}[2]{ll}
+    Eerste docent    & #6 \\
+    Tweede docent    & #7 \\
+   \end{tabular}
+   }
+   \vspace{1.0cm}
+  }
+\fi
+
+
+% Om de verwijzingen alfabetisch sorteren:
+\bibliographystyle{abbrv}
+
+% Om de verwijzingen te sorteren in volgorde van aanroep:
+%\bibliographystyle{unsrt}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Command for creating the thesis title page in accordance with the
+% requirements
+%
+

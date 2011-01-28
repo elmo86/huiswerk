@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.12.10)  6 JAN 2011 07:50
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.12.5)  27 JAN 2011 16:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,7 +6,7 @@ entering extended mode
 (./docenten.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
+yphenation, dutch, loaded.
 (/usr/share/texmf/tex/latex/beamer/base/beamer.cls
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasercs.sty
 Package: beamerbasercs 2007/01/28 (rcs-revision 1.4)
@@ -628,14 +628,9 @@ LaTeX Info: Redefining \textlatin on input line 82.
 \babel@savecnt=\count150
 \U@D=\dimen178
 )
-
-Package babel Warning: No hyphenation patterns were loaded for
-(babel)                the language `Dutch'
-(babel)                I will use the patterns loaded for \language=0 instead.
-
-\l@dutch = a dialect from \language0
 Package babel Info: Making " an active character on input line 132.
-)) (/usr/share/texmf/tex/latex/beamer/themes/theme/beamerthemeBerlin.sty
+))
+(/usr/share/texmf/tex/latex/beamer/themes/theme/beamerthemeBerlin.sty
 Package: beamerthemeBerlin 2007/01/28  (rcs-revision 1.11)
 
 (/usr/share/texmf/tex/latex/beamer/themes/outer/beamerouterthememiniframes.sty
@@ -798,35 +793,68 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 ] (./docenten.toc)
 [2
 
-] [3
+] <Mendel_GA.jpg, id=48, 451.6875pt x 347.04657pt>
+File: Mendel_GA.jpg Graphic file (type jpg)
+ <use Mendel_GA.jpg>
+[3
 
-] [4
+ <./Mendel_GA.jpg>]
+File: Mendel_GA.jpg Graphic file (type jpg)
+ <use Mendel_GA.jpg> [4
 
-] [5
+]
+File: Mendel_GA.jpg Graphic file (type jpg)
+ <use Mendel_GA.jpg> [5
 
 ] [6
 
-] [7
+]
+[7
 
 ] [8
 
 ] [9
 
-] [10
+] <Schermafdruk-1.png, id=106, 1371.1225pt x 770.88pt>
+File: Schermafdruk-1.png Graphic file (type png)
 
-] [11
+<use Schermafdruk-1.png> [10
 
-] [12
+ <./Schermafdruk-1.png (PNG copy)>]
+File: Schermafdruk-1.png Graphic file (type png)
 
-] [13
-
-] [14
-
-] [15
-
-] [16
+<use Schermafdruk-1.png> [11
 
 ]
+File: Schermafdruk-1.png Graphic file (type png)
+ <use Schermafdruk-1.png> [12
+
+]
+<IMG_0953_bwt.jpg, id=131, 3468.96pt x 2601.72pt>
+File: IMG_0953_bwt.jpg Graphic file (type jpg)
+ <use IMG_0953_bwt.jpg>
+[13
+
+ <./IMG_0953_bwt.jpg>] <imag0366.jpg, id=141, 2601.72pt x 1734.48pt>
+File: imag0366.jpg Graphic file (type jpg)
+
+<use imag0366.jpg> [14
+
+ <./imag0366.jpg>]
+File: imag0366.jpg Graphic file (type jpg)
+ <use imag0366.jpg> [15
+
+]
+File: imag0366.jpg Graphic file (type jpg)
+
+<use imag0366.jpg> [16
+
+] <IMAG0412.jpg, id=166, 1734.48pt x 2601.72pt>
+File: IMAG0412.jpg Graphic file (type jpg)
+
+<use IMAG0412.jpg> [17
+
+ <./IMAG0412.jpg>]
 \tf@nav=\write5
 \openout5 = `docenten.nav'.
 
@@ -836,27 +864,26 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 \tf@snm=\write7
 \openout7 = `docenten.snm'.
 
-
-(./docenten.aux)
+ (./docenten.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 12939 strings out of 495061
- 229278 string characters out of 1182620
- 313233 words of memory out of 3000000
- 15748 multiletter control sequences out of 15000+50000
+ 12969 strings out of 495006
+ 229764 string characters out of 1181410
+ 313359 words of memory out of 3000000
+ 15772 multiletter control sequences out of 15000+50000
  5452 words of font info for 20 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
+ 68 hyphenation exceptions out of 8191
  45i,15n,60p,316b,645s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/sha
 re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-te
 xlive/fonts/type1/public/amsfonts/cm/cmss8.pfb>
-Output written on docenten.pdf (16 pages, 69398 bytes).
+Output written on docenten.pdf (17 pages, 10327320 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
- 35 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 197 PDF objects out of 1000 (max. 8388607)
+ 37 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
