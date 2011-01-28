@@ -1,0 +1,46 @@
+\documentclass[12pt,a4paper,dutch]{report}
+\newif\ifpublic
+%\publictrue
+\usepackage{modelverslag}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black, citecolor=black, filecolor=black, urlcolor=blue}
+
+\begin{document}
+%\twocolumn
+
+% Onbekende gegevens invullen met {}:
+\titelblad
+  {MapleTA 6 in de praktijk} % hier titel invullen 
+  {Elvira Sitdikova}        % hier naam invullen
+  {0784515}                 % hier stamnummer invullen
+  {Technische Informatica} % hier opleiding invullen
+  {\today}                 % {\today} (concept) of {1 april 2011} (definitief)
+  {Dhr. A. van der Padt}         % eerste docent
+  {Dhr. P.J. den Brok}           % tweede docent
+\ifpublic
+s  {\footnotesize{\textsf{\input{samenvatting}}}}
+\else
+  \pagenumbering{roman}
+  \input{samenvatting}
+  \input{dankbetuiging}
+  \input{inhoud}
+  %\input{afkortingen}  % overzicht afkortingen
+  \pagenumbering{arabic}
+\fi
+\input{inleiding}    %de inleiding
+\input{hoofdverslag} %het hoofdverslag
+\input{conclusies}   %geaggregeerde conclusies en aanbevelingen
+\ifpublic
+  \def\bibname{\normalsize{Bronnen}}
+  \input{bronnen}    % bronvermeldingen met boektitels en url's
+\else
+  \def\bibname{Bronnen}\addcontentsline{toc}{chapter}{Bronnen}
+  \input{bronnen}    % bronvermeldingen met boektitels en url's
+  \input{evaluatie}  % reflectie op het leerproces in competentietermen
+  \appendix\addcontentsline{toc}{chapter}{\bf{Bijlagen}}
+  \input{bijlage1}   % Indien je in LaTeX geschreven bijlagen niet apart wil
+  %\input{bijlage2}   % bundelen, kan je ze opnemen in bijlage1.tex etc..
+  %\input{bijlage3}   % In andere gevallen kan je de inputregels voor de
+  %\input{bijlage4}   % bijlagen uitcommentariëren of verwijderen:
+\fi
+\end{document}

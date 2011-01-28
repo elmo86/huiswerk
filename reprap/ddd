@@ -1,0 +1,8 @@
+nfc-list
+nfc-list use libnfc 1.4.0 (r833)
+Connected to NFC device: ACS ACR122U PICC Interface 00 00 / ACR122U102 - PN532 v1.4 (0x07)
+1 ISO14443A passive target(s) was found:
+    ATQA (SENS_RES): 00  04  
+       UID (NFCID1): 82  69  0e  4a  
+      SAK (SEL_RES): 08  
+

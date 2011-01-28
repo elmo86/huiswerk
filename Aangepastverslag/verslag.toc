@@ -1,0 +1,31 @@
+\select@language {dutch}
+\select@language {dutch}
+\contentsline {chapter}{Samenvatting}{i}{section*.1}
+\contentsline {chapter}{Dankbetuiging}{ii}{chapter*.2}
+\contentsline {chapter}{Inleiding}{1}{chapter*.4}
+\contentsline {chapter}{Onderzoek}{3}{chapter*.5}
+\contentsline {section}{Situatieschets}{4}{chapter*.6}
+\contentsline {section}{Doelstelling}{5}{section*.7}
+\contentsline {section}{Probleemstelling}{6}{section*.8}
+\contentsline {section}{Onderzoeksmethode}{6}{section*.9}
+\contentsline {section}{Deelvragen}{6}{section*.10}
+\contentsline {section}{Planning}{7}{section*.11}
+\contentsline {chapter}{Problemen en oplossingen}{7}{section*.12}
+\contentsline {section}{Het SSL-certificaat}{8}{chapter*.13}
+\contentsline {section}{De Hogeschool Rotterdam{} en het MBO}{8}{section*.14}
+\contentsline {section}{Navigatie}{9}{section*.15}
+\contentsline {section}{Cijferregistratie}{10}{section*.16}
+\contentsline {section}{Proxy instellingen}{10}{section*.17}
+\contentsline {chapter}{Keuzes en deelvragen}{11}{section*.18}
+\contentsline {section}{Blackboard vs N@tschool}{12}{chapter*.19}
+\contentsline {section}{`Single Sign On'}{12}{section*.20}
+\contentsline {section}{Plug-in of script}{13}{section*.21}
+\contentsline {section}{Cijferregistratie}{13}{section*.22}
+\contentsline {section}{HBO \& MBO}{14}{section*.23}
+\contentsline {section}{OS en andere belangrijke keuzes}{14}{section*.24}
+\contentsline {chapter}{Conclusies en aanbevelingen}{14}{section*.25}
+\contentsline {chapter}{Bronnen}{16}{chapter*.26}
+\contentsline {chapter}{Evaluatie}{17}{chapter*.27}
+\contentsline {chapter}{\bf {Bijlagen}}{19}{chapter*.28}
+\contentsline {chapter}{\numberline {A}Projecten MapleTA}{20}{appendix.A}
+\contentsline {chapter}{\numberline {B}Opzet MapleTA server}{23}{appendix.B}

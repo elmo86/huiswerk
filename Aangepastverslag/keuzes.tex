@@ -1,0 +1,140 @@
+\hoofdstuk{Keuzes en deelvragen} 
+
+Tijdens de uitvoering van dit haalbaarheidsonderzoek werd ik
+geconfronteerd met een aantal deelvragen die ik moest beantwoorden en
+een aantal keuzes die ik moest maken.
+
+\paragraaf{Blackboard vs N@tschool} % N@tschool 
+
+Eerst deelvraag was: `Is het niet beter om op BlackBoard leeromgeving
+over te stappen? Veel universiteiten gebruiken deze leeromgeving al en
+hebben daar redelijk goede ervaringen mee. Het grootste voordeel van
+BlackBoard is dat MapleTA daarvoor al een plug-in. Voor N@tschool
+bestaat zo'n plug-in niet.'
+
+Het antwoord hierop kan heel kort zijn. Namelijk nee. Er zijn
+inderdaad universiteiten die gebruik maken van BlackBoard, maar de \HR{}
+maakt al jaren gebruik van N@tschool. En zelfs nu zijn er nog enkele
+docenten die niet weten hoe ze ermee om moeten gaan. Als er nu weer
+een nieuwe leeromgeving geïntroduceerd wordt, zou het weer heel veel
+tijd en geld kosten om docenten ermee te leren werken. Bovendien
+moeten er dan voor BlackBoard ook licenties gekocht worden.
+
+Verder heb ik tijdens gesprekken met gebruikers van MapleTA
+gecombineerd met BlackBoard gehoord dat het niet altijd even goed
+werkt. Zo is onmogelijk om via BlackBoard sommige instellingen in
+MapleTA te veranderen puur omdat je daar niet bij komt. Natuurlijk kan
+je erbij komen door in MapleTA rechtstreeks in te loggen, maar dat is
+natuurlijk niet de bedoeling. Ook zou BlackBoard tijdrovend zijn
+tijdens het inlezen en importeren van grote groepen studenten, terwijl
+in MapleTA rechtstreeks dat een kwestie van een paar milliseconden is.
+
+Het is dus beter om het huidige systeem N@tschool aan MapleTA
+te koppelen en docenten een workshop te geven om ze te leren met de
+nieuwe koppeling om te gaan.
+
+\paragraaf{`Single Sign On'}
+
+Om te weten of het huidige systeem samen met MapleTA gebruikt zou
+kunnen worden, was het belangrijk om te weten of MapleTA de Single
+Sign On (SSO) ondersteunt. Oftewel kan MapleTA via LDAP van de \HR{} aan
+het centrale loginpunt gekoppeld worden?
+
+Dat MapleTA LDAP ondersteund was wel duidelijk, omdat ook de oude
+versie van de toetsomgeving een link met LDAP had. Zo konden alleen
+studenten van de \HR{} erop inloggen. Om uit te zoeken of het ook SSO
+ondersteund, werd er een testomgeving gebruikt. Op de testserver werd
+er volgens de handleidingen op de Confluence [3] wat veranderd aan het
+web.xml bestanden en kwamen er wat andere bestanden bij. Daarna kreeg
+MapleTA een geldige `toegangsticket' van de login systeem, en kon men
+verder in MapleTA werken. Enige probleem dat eruit kwam is de
+verkeerde configuratie van Tomcat tijdens de installatie van
+MapleTA. Maar dit probleem werd al in het hoofdstuk hiervoor, in
+paragraaf \ref{sec:proxy} op pagina \pageref{sec:proxy} beschreven.
+
+\paragraaf{Plug-in of script}
+
+De volgende deelvraag was: `Hoe kan de hoofdpagina van MapleTA
+omgeleid worden? Moet daarvoor veel broncode veranderd worden of is
+het mogelijk of noodzakelijk om een aparte plug-in te schrijven?'
+
+Het uiteindelijke besluit was om in de broncode van MapleTA zelf een
+aantal bestanden te veranderen en wat bestanden toe te voegen. Dit omdat ik
+geen idee heb hoe ik een plug-in moet schrijven. Wat ik ervan
+weet, is dat dit veel meer dan de geplande tijd in beslag zou
+nemen. Tijdens het testen met de testserver was het gelukt om een
+geldige `toegangsticket' te krijgen van het centrale loginpunt. Dus
+directe integratie in de MapleTA files werkt.
+
+\paragraaf{Cijferregistratie} 
+
+Een andere belangrijke deelvraag was: `Hoe moet de cijferregistratie
+gekoppeld worden? Moet er een aparte buffer komen waar de docenten
+resultaten kunnen uploaden en het Osiris team deze kan downloaden, of
+kan dat rechtstreeks vanuit MapleTA gebeuren, zonder enige
+tussenruimte.'
+
+Oorspronkelijk was het de bedoeling om een aparte server op te zetten
+die als het ware een buffer zou moeten vormen tussen de docent en het
+Osiris team. De docent zou de functionaliteit van MapleTA gebruiken en
+de cijferlijst in een bestand met `comma seperated values' (csv-file)
+te downloaden. Daarna zou er op een extra pictogram gedrukt moeten
+worden om naar de bufferserver te gaan. Op deze server zou ook een
+script draaien die de csv-file omzet naar het juiste formaat en
+vervolgens in de database opslaat. De docent zou op de server met zijn
+digitale handtekening moeten inloggen, het file uploaden en daarbij
+een `volgnummer' krijgen. Verder moet de docent de cijferlijst ook
+uitprinten, daarop het gekregen `volgnummer' opschrijven en dit bij
+het Osiris team inleveren. Osiris medewerkers zouden de cijferlijst
+daarna gewoon kunnen downloaden, en verder verwerken net alsof ze het
+gewoon per mail zouden krijgen.
+
+Later kwam er nog een mogelijkheid bij, die grotendeels overeenkomt
+met de vorige oplossing, alleen een stukje simpeler. Nu ik toch heb
+geleerd hoe je MapleTA bestanden kan wijzigen, verwijderen en
+toevoegen, waarom dan een aparte server en database opzetten om het
+datatype te veranderen? Het script voor het omzetten naar het juiste
+formaat zou op de MapleTA server zelf kunnen staan. Om dat script te
+activeren, zou er in de `gradebook' file een extra knop moeten komen,
+genaamd `Export to Osiris'. Die zou de csv-file kunnen binnenhalen,
+parsen, en aan de gebruiker vragen waar het nieuwe Excelbestand
+opgeslagen moet worden. Daarna kan de docent een nieuwe sheet gewoon
+volgens de oude procedure opsturen. Voor het Osiris team zou er zelfs
+helemaal niets veranderen.
+
+Keuze voor een oplossing in dit geval lag voor de hand. In samenspraak
+met de begeleidende docent voor de tweede oplossing gekozen.
+
+\paragraaf{HBO \& MBO} 
+
+Nu er besloten is om MapleTA aan het centrale loginpunt te koppelen is
+het vanzelfsprekend dat de MBO studenten er niet bij kunnen omdat ze
+niet in de LDAP-server van de \HR{} zijn opgenomen. Het is dan ook
+redelijk vanzelfsprekend dat de drie mogelijke oplossingen voor dit
+probleem, die beschreven staan in paragraaf \ref{sec:MBO} op pagina
+\pageref{sec:MBO}, niet reëel zijn, omdat ze al het werk die in de
+navigatie mogelijkheden gestopt is, teniet doen. De enige mogelijke
+oplossing blijft dan het opzetten van twee MapleTA servers. De tweede
+MapleTA server zal niet samen met N@tschool kunnen werken, maar het is
+dan wel bereikbaar buiten de \HR{} voor studenten aan het MBO. Het
+belangrijkste is dat de tentamenserver wel gekoppeld is aan
+N@tschool. Daarmee hoeven de studenten niet naar de juiste toets in
+MapleTA zelf te zoeken, ze klikken gewoon op het linkje die de docent
+bij zijn vak heeft neergezet, en ze zijn gelijk bij het juiste
+tentamen. Zo gaat er geen kostbare tijd verloren aan zoeken.
+
+\paragraaf{OS en andere belangrijke keuzes}
+
+Verder is er in dit onderzoek besloten om de testserver onder Linux te
+draaien en niet onder Windows. De reden hiervoor is dat de MapleTA
+servers van de \HR{} Linux als besturingssysteem gebruiken. Daarmee is
+het makkelijker een passende handleiding voor het overbrengen van
+servers te schrijven.
+
+Een andere keuze die gemaakt was, was het gebruik van Apache2 in
+plaats van Lighttpd. Reden hiervoor was het feit dat ik wat meer
+bekend ben met Apache2. Maar mocht het probleem dat de proxy oplevert
+niet in de configuratie tussen apache en MapleTA zitten, dan zal deze
+keuze heroverwogen worden en waar nodig zal er alsnog op Lighttpd
+overgestapt kunnen worden.
+

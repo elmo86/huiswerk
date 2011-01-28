@@ -1,0 +1,155 @@
+\hoofdstuk{Problemen en oplossingen}
+
+Tijdens dit onderzoek ben ik regelmatig tegen problemen
+aangelopen. Sommige van die problemen kon ik niet zelf oplossen. In
+die gevallen moest ik hulp vragen bij andere mensen. Sommige van de
+problemen konden op meerdere manieren opgelost worden.
+
+\paragraaf{Het SSL-certificaat}
+
+Voor het onderzoek heb ik een aparte Linuxserver ingericht. Daar kon
+ik nieuwe scripts uitproberen en verschillende oplossingen testen. Een
+van de basis problemen waar ik tegenaan botste was mijn geringe kennis
+van Linux en de shell. Gelukkig baart oefening kunst en heb ik heel
+wat geleerd. Een ander probleem was het configureren van LDAP voor
+MapleTA. Eerder heeft de verantwoordelijke medewerker van de
+ICT-afdeling mijn testserver toegang tot LDAP gegeven. Ik dacht dat
+het daarmee klaar was, en de rest in de LDAP-configuratiefile
+ingesteld moest worden. Helaas was dit niet het geval. Om gebruik te
+maken van LDAP-server van school moest er ook in de testomgeving
+gebruik gemaakt worden van de beveiligde verbinding. Daarvoor moest ik
+het SSL-certificaat, de keystore en de truststore file van de \HR{}
+hebben.
+
+Gezien het feit dat het om de beveiliging van de \HR{} files ging moest
+ik eerst op toestemming van de desbetreffende afdeling
+wachten. Uiteindelijk mocht ik de certificaten gebruiken, maar ik
+mocht het niet zelf installeren. Het werd voor me gedaan.
+
+\paragraaf{De \HR{} en het MBO}
+\label{sec:MBO} 
+
+De volgende problemen waren geen echte problemen, maar vraagstukken en
+deelvragen die aan de hand van de verschillende gesprekken beantwoord
+moesten worden:
+
+Vanuit de opleiding was er een vraag over wenselijkheid van de
+koppeling van de MapleTA server via LDAP aan het centrale
+loginpunt. Enige nadeel daarvan is dat de MBO-studenten er niet meer
+bij kunnen, omdat ze nog niet bij de \HR{} ingeschreven zijn. Daarvoor
+zijn er de volgende oplossingen mogelijk.
+
+\begin{description}
+\item[Hoeft niet in te loggen:] studenten hoeven niet in te
+  loggen. Voordeel hiervan is dat de MBO studenten erbij kunnen. Een
+  grote nadeel is dat de tentamens ook altijd open zijn en studenten
+  dus die van te voren kunnen maken. Een andere nadeel is dat bij de
+  anonieme inlog, er geen resultaten worden bijgehouden. Daarmee
+  verdwijnt een heel belangrijk en noodzakelijk eigenschap van
+  MapleTA;
+\item[Moet wel inloggen, maar niet via LDAP:] dat wil zeggen dat, in
+  plaats van de centrale database met de ingeschreven studenten,
+  MapleTA een eigen database met de gebruikers bijhoudt. De
+  administrator kan dan alle gebruikers handmatig toevoegen, de
+  student hoeft daarvoor niet bij de \HR{} te studeren. Nadeel van deze
+  methode is de navigatie. Als er geen gebruik wordt gemaakt van LDAP,
+  kan MapleTA dus ook niet aan het centrale loginpunt gekoppeld
+  worden, en blijft de navigatie onduidelijk;
+\item[Twee servers:] er kunnen twee servers opgezet worden. Eentje
+  voor de tentamens, die zal via LDAP werken en alleen voor de
+  studenten van de \HR{} bereikbaar zal zijn. En een server met een
+  eigen gebruikersdatabase. Zo wordt de tentamenserver aan N@tschool
+  gekoppeld en hoeven de studenten niet tijdens de toets naar het
+  juiste vak te zoeken en daarmee hun tijd te verspillen. Server twee
+  kan dan gebruikt worden om te oefenen, zo wel voor eigen studenten
+  als voor de MBO-studenten. Server twee moet overigens wel een eigen
+  database hebben, anders worden de resultaten van de oefentoetsen
+  niet bijhouden.
+\end{description}
+
+\paragraaf{Navigatie}
+
+Een deelvraag die hieruit volgt is de navigatie binnen de
+MapleTA. Gezien de ervaringen van docenten en studenten ermee, bestaat
+er een noodzaak om het geheel overzichtelijker te maken. Het zou op
+verschillende manieren kunnen.
+
+\begin{description}
+\item[Overstappen op BlackBoard.] De makers van MapleTA hebben een
+  plug-in geschreven die zorgt voor de koppeling tussen beide
+  systemen. Voordeel: het geheel wordt overzichtelijk, zonder dat er
+  veel tijd in de ontwikkeling van een nieuwe plug-in voor N@tschool
+  gestoken moet worden. Nadeel: Het is weer een nieuwe leeromgeving,
+  waarmee docenten en studenten moeten leren werken. Bovendien moeten
+  er dan licenties voor BlackBoard gekocht worden, terwijl de
+  licenties voor N@tschool al betaald zijn;
+\item[Eigen interface schrijven.] Één van de mogelijkheden is het zelf
+  schrijven van een interface voor MapleTA. Voordeel: deze kan zo
+  overzichtelijk gemaakt worden als men wilt. Nadeel: het zal een heel
+  groot project worden en te zwaar voor een
+  afstudeerproject. Bovendien zou men meerdere programmeurs nodig
+  hebben;
+\item[Koppelen aan de centrale inlog punt.] Als MapleTA `SSO'
+  ondersteunt, zou de navigatie rechtstreeks vanuit N@tschool kunnen
+  plaatsvinden. Verder zouden docenten ook direct vanuit hun website
+  naar de oefentoetsen kunnen verwijzen. Nadeel: niet iedereen op de
+  \HR{} is overtuigd van de nuttigheid van N@tschool. Bovendien zijn
+  er nog een aantal docenten die er niet mee bekend zijn.
+\end{description}
+
+\paragraaf{Cijferregistratie}
+
+De volgende deelvraag is de mogelijkheid om cijfers vanuit MapleTA te
+transporteren naar Osiris. Na de afloop van een kwartaal krijgen
+docenten een mail van het Osiristeam. In die mail zit een Excelbestand
+volgens een bepaald formaat met alle namen van studenten die dit vak
+hadden moeten volgen. Het is de bedoeling dat de docenten dit
+excelbestand vullen en terug sturen naar het Osiris team. Het geheel
+gebeurd volgens een beveiligde procedure. Meeste docenten brengen de
+cijfers handmatig over. Sommigen gebruiken de exportfunctie van
+MapleTA en krijgen een csv-file. Die file parsen ze zelfstandig naar
+een Excelformaat en kopiëren resultaten in de Excelsheet van het
+Osiris team. Om het geheel te automatiseren en toch de huidige
+beveiliging te behouden zijn er twee mogelijkheden.
+
+\begin{description}
+\item[Aparte server] voor de data opzetten. In MapleTA komt dan een
+  extra knop waarmee docenten cijferlijst kunnen uploaden op de
+  server. Daar wordt de data in het juiste formaat omgezet en kunnen
+  de medewerkers van het Osiris team het gewoon downloaden. Tijdens
+  het uploaden krijgt de docent een aantal controle stappen net zoals
+  het momenteel het geval is;
+\item[Script] voor het omzetten van cijfers naar het juiste formaat
+  direct op de MapleTA server draaien. En in MapleTA gewoon een extra
+  knop maken die de cijfers inleest, naar het juiste formaat omzet, en
+  daarna een uitvoer geeft in de vorm van een excelbestand. In
+  hetzelfde formaat als het Osiris team het wilt.
+\end{description}
+
+\paragraaf{Proxy instellingen}
+\label{sec:proxy} 
+
+Tijdens het testen ontdekte ik dat Tomcat tijdens de installatie van
+MapleTA verkeerd was geconfigureerd. Om dat op te lossen werd de hele
+server opnieuw geïnstalleerd. Daarna moest er een proxyserver
+opgezet worden die het internet verkeer die naar de server van MapleTA
+zoekt moest omleiden naar een specifiek webadres.
+
+Het is gelukt om de proxyserver op de gebruikelijke manier op te
+zetten, maar het is nog steeds niet gelukt om het werkend te
+krijgen. Op de een of andere manier werkt exact hetzelfde stukje code
+wel op de ene server en niet op de andere server.
+
+Wel denk ik te weten waar het probleem aan ligt. MapleTA probeert zelf
+gebruikers door te verwijzen naar een ander adres en op deze plek
+kunnen die twee instellingen conflicteren met elkaar. Tegen de tijd
+dat dit verslag geschreven moest worden, was het probleem nog niet
+opgelost. Maar het is geen bedreiging voor het project, omdat in de
+logfiles van de proxy en in de logfiles van MapleTA opgezocht kan
+worden wat er fout gaat en gerepareerd moet worden. Echter had ik daar
+nog geen tijd voor, want daarvoor moet je nog dieper in de Apache
+documentatie \cite{apache2} duiken.
+
+Dat waren de belangrijkste problemen en vraagstukken waar ik tegenaan
+ben gelopen. In het volgende hoofdstuk worden de uiteindelijke keuzes
+besproken en onderbouwd.

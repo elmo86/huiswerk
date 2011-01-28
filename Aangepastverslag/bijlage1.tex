@@ -1,0 +1,364 @@
+\bijlage{Projecten MapleTA}
+\label{chap:opdracht}
+Deze `embedded system projecten' betreffen twee minorprojecten en \`e\`en afstudeerproject:
+
+\begin{enumerate}
+	\item het uitvoeren van een haalbaarheidsonderzoek (tirbpf2a: 7 ects):
+		\begin{itemize}
+			\item Ori"entatie op MapleTA en de toepassing daarvan binnen het onderwijs. Onderzoek de (on)mogelijkheden van de `Blackboard-module'. Deze module kan aan MapleTA gekoppeld worden als er gebruik wordt gemaakt van de ELO ‘Blackboard’. De Noordelijke Hogeschool Leeuwarden (NHL) en de TU-Delft maken gebruik van Blackboard, de Hogeschool Rotterdam maakt echter gebruik van N@tschool. Informatie is te verkrijgen bij de leveranciers van MapleTA, Blackboard en N@tschool;
+			\item Maak een globale planning met mijlpalen en activiteiten. Hou rekening met vakanties en de uiterste datum;
+			\item Bespreek de planning met de begeleider. Na goedkeuring door de begeleider moet elke mijlpaal in deze planning gereviewd worden door de begeleider;
+			\item Maak een pakket van eisen voor een navigatievoorziening. Voor deze navigatievoorziening geldt dat gebruikers (studenten, docenten, surveillanten en administators) op eenvoudige wijze moeten kunnen navigeren naar- en binnen MapleTA. Bij het ontwerp van deze navigatievoorziening is rekening gehouden met interfacing vanuit een standaard website (HTML-pagina), N@tSchool en de WIKI;
+			\item Maak een pakket van eisen voor de koppeling tussen de cijferregistraties van MapleTA en Osiris. Voor deze koppeling moet gelden dat de docent altijd verantwoordelijk is voor de resultaten afkomstig uit MapleTA die aan Osiris worden aangeboden;
+			\item Beide eisenpakketten moeten voldoen aan de kaders die gesteld worden door de Wet op het Hogeronderwijs (WHW) en de Hogeschool Rotterdam. In het bijzonder geldt dit voor de beveiligingeisen betreffende integriteit, betrouwbaarheid en beschikbaarheid van de cijferregistratie;
+			\item De functionaliteit moet opgesteld worden in overleg met gebruikers (docenten, beheerders, studenten, administratie etc.);
+			\item Beschrijf nauwkeurig de context (interfacing, externe bestanden, communicatieprotocollen, in- en uitvoerschermen);
+			\item Maak een architectonische ontwerp voor de navigatievoorziening;
+			\item Maak een architectonisch ontwerp voor de koppeling van de cijferregistraties tussen MapleTA en Osiris.
+			\item De technische haalbaarheid van de architectonische ontwerpen moet aangetoond worden met analyses, prototyping en/of experimenten. Verslaggeving, reviews en demonstraties volgens nadere afspraken met de begeleider;
+		\end{itemize}
+	\item Het implementeren (ontwerpen, programmeren, testen en inbedrijfstellen) van een navigatievoorziening. Het opstellen van documentatiemateriaal en een instructie voor ontwerpers van webpagina’s die van deze navigatievoorzieningen gebruik gaan maken. Verslaggeving, reviews en demonstraties volgens nadere afspraken met de begeleider (tirbpf2b: 8 ects);
+	\item Het implementeren (ontwerpen, programmeren, testen en inbedrijfstellen) van een koppeling tussen de cijferregistratie van MapleTA met Osiris. Het opstellen van documentatiemateriaal en een instructie voor docenten die van deze koppeling gebruik maken. Afstudeerverslag, reviews, presentatie en demonstratie volgens nadere afspraken met de begeleider(cmiafst1: 24 ects).
+\end{enumerate}
+
+Deze projecten bevatten beroepscompetenties uit de minor ‘Embedded System Engineer’ waarin de volledige levenscyclus in verwerkt is:
+
+\begin{description}
+	\item[Functioneel ontwerp:] Na de analyse van het bedrijfsprocessen en de gebruikersbehoeften, moeten de functionaliteit, de kwaliteitscriteria, de beveiligingcriteria in een pakket van eisen worden opgenomen. Ook moet de context van het systeem nauwkeurig beschreven worden;
+	\item[Structureel ontwerp:] Het ontwerpen van de architectuur, de modulestructuur, het programmeren, het testen en het inbedrijfstellen.
+\end{description}
+
+Ook bevatten de projecten algemene competenties zoals onderzoeken, interviewen, observeren, experimenteren, communiceren, begroten, onderhandelen, documenteren en instrueren.
+
+\section*{Contacten}
+\begin{itemize}
+	\item Begeleidende docent: P.J. den Brok (\textsl{p.j.den.brok@hro.nl});
+	\item MapleTA:
+	
+		\textsl{http://www.maplesoft.com/products/mapleta/}
+	\item MapleTA leverancier Nederland (CANdiensten):
+	
+		\textsl{http://www.candiensten.nl/home/index.php}
+		
+		contactpersoon: Gose Fischer (\textsl{fischer@can.nl}) of (\textsl{fischer@candiensten.nl});
+		
+	\item MapleTA gebruikersgroepen:
+	
+		\textsl{https://www.surfgroepen.nl/sites/wiskundetoetsen/MapleTA/default.aspx}
+		
+	\item MapleTA expert: Metha Kamminga (\textsl{kamminga@tech.nhl.nl}),
+	
+	docent wiskunde Noordelijke Hogeschool Leeuwarden
+	
+	\textsl{htttp://www.tech.nhl.nl\~Kamminga/}
+	
+	\item Blackboard:
+	
+	\textsl{http://www.blackboard.com/}
+	
+	\textsl{http://blackboard.tudelft.nl/webapps/portal/frameset.jsp}
+	
+	\item N@tschool:
+	
+	\textsl{http://natschool.hro.nl}
+	
+	\textsl{http://www.natschool.com/}
+	
+	\item Osiris: (\textsl{https://osiris.hro.nl}),
+	
+	contactpersoon Ruud Ooms (\textsl{c.ooms@hro.nl});
+	
+	\item ICT-afdeling(\textsl{https://service.hro.nl}),
+	
+	beheerder MapleTA-server: Jeffrey Sleddens(\textsl{j.p.g.sleddens@hro.nl});
+	
+	\item Toetsbankbeheerders en proctors: John Grobben, Hans Manni, Stelian Paraschiv, Youri Tjang en Jesse Tjang;	
+\end{itemize}
+
+\bijlage{Opzet MapleTA server}
+\begin{enumerate}
+	\item Pak een ubuntu server met open ssh en postgresql
+	\item Installeer programma add-apt-repository			
+			\begin{quote}
+				apt-get install python-software-properties 
+			\end{quote}
+	\item Voeg de repository toe
+			\begin{quote}
+				sudo add-apt-repository "deb http://archive.canonical.com/ lucid partner"
+			\end{quote}
+	\item Update de sourse list
+			\begin{quote}
+				apt-get update
+			\end{quote}
+	\item Installeer java en de library
+			\begin{quote}
+				sudo aptitude install sun-java6-jre 
+			\end{quote}
+	\item Installeer apache2
+			\begin{quote}
+				sudo aptitude install apache2
+			\end{quote} 
+	\item Installeer apache-tomcat6 van de repository
+			\begin{quote}
+				sudo aptitude install tomcat6
+				
+				sudo aptitude install tomcat6-admin
+				
+				sudo aptitude install tomcat6-common
+				
+				sudo aptitude install tomcat6-docs
+				
+				sudo aptitude install tomcat6-examples 
+				
+				sudo aptitude install tomcat6-user
+			\end{quote} 
+	\item Pas /etc/tomcat6/tomcat-users.xml file op de onderstaande manier: 
+			\begin{quote}
+				$<$tomcat-users$>$
+				
+				\quad $<$role rolename="'manager"'/$>$
+				
+				\quad $<$role rolename="'tomcat"'/$>$
+				
+				\quad $<$role rolename="'admin"'/$>$
+				
+				\quad $<$user username="'elvira"' password="'manderijn"' roles="'manager,tomcat,admin"'/$>$
+				
+				$<$/tomcat-users$>$
+			\end{quote} 
+	\item Pas het  /usr/share/tomacat6/bin/catalina.sh, door het volgende toe te voegen:
+			\begin{quote}
+				JAVA\_OPTS="'\$JAVA\_OPTS -Duser.language=en -Dfile.encoding=UTF-8 -Xms128M -Xmx512M -XX:PermSize=64M -XX:MaxPermSize=128M"'
+			\end{quote}
+		\item Maak een wachtwoord voor de user postgres van de postgresql:
+	    \begin{quote}
+				sudo -u postgres psql postgres
+				
+				\textbackslash password postgres
+				
+				\quad Enter new passwd: *********
+				
+				\quad Enter it again: *********
+				
+				\textbackslash q 
+			\end{quote}
+		\item Reboot 
+		\item Start apache2 server op
+			\begin{quote}
+					sudo /ets/init.d/apache2 start
+			\end{quote}
+		\item Start tomcat server op 
+			\begin{quote}
+					sudo /etc/init.d/tomcat6 start
+			\end{quote}
+		\item Test de tomcat server op het volgende adres in de brouwser
+			\begin{quote}
+					http://145.24.222.90:8080
+			\end{quote}
+		\item Maak een directory om MapleTA in te mounten in de root
+			\begin{quote}
+					cd $\sim$
+					
+					sudo mkdir MapleTA
+			\end{quote}
+		\item Vindt je cd-rom drive en Mount de inhoud naar de MapleTA directory
+			\begin{quote}
+					wodim -devices
+					sudo mount -o loop /dev/scd0 MapleTa
+			\end{quote}
+		\item Ga naar de MapleTA map en start de installlatie file
+			\begin{quote}
+					sudo su
+					
+					cd $\sim$/MapleTA
+					
+					./install.sh 
+			\end{quote}
+		\item	Nu start de installatie van de MapleTA. Na 37 keer op enter drukken vraagt die om:
+		
+			\begin{tabular}{ | l | l |}
+			  \hline
+				Vraag van de installatie wizard & Jouw antwoord\\
+				\hline
+				DO YOU ACCEPT THE TERMS OF & y enter\\
+				THIS LICENSE AGREEMENT? (Y/N) & \\
+				\hline
+				1 - Full installation of 6 or & select 1\\
+				2 - Upgrade installation of 6 & \\
+				\hline
+				Do you want to search for a Tomcat & select yes\\
+				insallation on your system? & \\
+				1- Yes & \\
+				2- No & \\
+				\hline
+				What directory is your Tomcat & /var/lib/tomcat6/\\
+				installation installed? & \\
+				(DEFAULT: /usr/local/tomcat) & \\
+				\hline
+				What is the host name of your & localhost\\
+				Tomcat installation? & \\
+				(DEFAULT: ) & \\ 
+				\hline
+				What is the port number of your  & enter\\ 
+				Tomcat installation? & \\ 
+				(DEFAULT: 8080) & \\ 
+				\hline
+				Where would you like to install Maple T.A. 6? & enter\\ 
+				Default Install Folder: /usr/local/MapleT.A.6 & \\ 
+				ENTER AN ABSOLUTE PATH, & \\ 
+				OR PRESS $<$ENTER$>$ TO ACCEPT & \\
+				THE DEFAULT: & \\
+				\hline
+				What is the host name of your PostgreSQL & enter\\ 
+				installation?  \quad  (DEFAULT: localhost) & \\ 
+				\hline
+				 What is the port number of your PostgreSQL & enter\\
+				 installation?  \quad  (DEFAULT: 5432)& \\
+				\hline
+				 What is the admin user name of your & enter\\
+				 PostgreSQL installation?    & \\
+				 (DEFAULT: postgres)& \\
+				\hline
+				 What is the admin user's password & manderijn\\
+				 of your PostgreSQL installation? & \\
+				 Please enter the password: & \\
+				 \hline
+				 Please set a name for the Maple T.A. & enter\\
+				 database \quad (DEFAULT: mapleta) & \\
+				 \hline
+				 Please set a user name for the Maple T.A. & enter\\
+				 database. (DEFAULT: mapleta) & \\
+				 \hline
+				 Set a password for the user account. & manderijn\\
+				 Please enter a password: & \\
+				 \hline
+				 What is the name of your mail server?  & hro.nl\\
+				 (DEFAULT: ) & \\
+				 \hline
+		\end{tabular}
+	
+		\begin{tabular}{ | l | l |}
+			   \hline
+				 Your mail server is being specified as: & 2\\
+				 1- Machine name & \\
+				 2- Domain name & \\
+				 ENTER THE NUMBER FOR YOUR  & \\
+				 CHOICE, OR PRESS $<$ENTER$>$ TO 	& \\
+				 ACCEPT THE DEFAULT: & \\
+				 \hline
+				 What is the from address to be used? & sitde @hro.nl\\
+				 (DEFAULT: )& \\
+			  \hline
+			   What is the user name to be used for  & sitde @hro.nl\\
+			   the mail server? & \\
+			   (DEFAULT: ) & \\
+			  \hline
+			   Please provide a password for this account. & My hro-webmail password\\
+			   Please enter the password: & \\
+			  \hline
+			   Choose the desired authenication method. & 2\\
+			   For more information on LDAP, refer to the & \\
+			   Maple T.A. LDAP administrator guides & \\
+			   located on the Maple T.A. CD. & \\
+			   1- Maple T.A. Database & \\
+			   2- LDAP & \\
+			   ENTER THE NUMBER FOR YOUR & \\
+			   CHOICE, OR PRESS $<$ENTER$>$ & \\
+			   TO ACCEPT THE DEFAULT: & \\
+			   \hline
+			   What is your school name? & Hogeschool Rotterdam\\
+				 (DEFAULT: ) &\\
+				 \hline
+				 What will be the username & sitde\\
+				 for this administrator account? &\\
+				 (DEFAULT: )& \\
+				 \hline
+				 What is the email address & sitde@hro.nl\\
+				 for this administrator account? & \\
+				 (DEFAULT: ) &\\
+				 \hline
+				 Please provide a password & My ldap account password\\
+				 for this administrator account. &\\
+				 Please enter the password: &\\
+				 \hline
+				 Choose how to store passwords in & enter\\
+				 the Maple T.A. database. &\\
+				 1- MD5 encrypted &\\
+			   2- Plain text &\\
+			   ENTER THE NUMBER FOR YOUR & \\
+			   CHOICE, OR PRESS $<$ENTER$>$ & \\
+			   TO ACCEPT THE DEFAULT: & \\
+			   \hline
+		\end{tabular}
+
+		\begin{tabular}{ | l | l |}
+				 \hline	
+			   Do you wish to configure Moodle & 2\\
+			   with Maple T.A.? &\\
+				 1- Yes &\\
+  			 2- No &\\
+  			 ENTER THE NUMBER FOR YOUR & \\
+			   CHOICE, OR PRESS $<$ENTER$>$ & \\
+			   TO ACCEPT THE DEFAULT: & \\
+			   \hline		   
+				 What version of Blackboard & enter\\
+			   do you currently use? & Hier is geen mogelijkheid  \\
+				 1- Blackboard Academic Suite & om zonderblackboard  \\
+				 2- Blackboard Vista/CE & te installeren,\\
+				 ENTER THE NUMBER FOR YOUR & daarom kies ik gewoon\\
+			   CHOICE, OR PRESS $<$ENTER$>$ & de eerste de beste\\
+			   TO ACCEPT THE DEFAULT: & \\
+			   \hline
+			   What is your name of your & enter \\
+			   Blackboard server? \quad (DEFAULT: ) &\\
+			   \hline
+			   What is the Maple T.A.-Blackboard & 1 enter\\
+			   Shared Key for your  & Er moet enige input zijn.  \\
+			   Blackboard installation? & Had ook iets anders\\
+				 Please enter a shared key: &  kunnen zijn\\
+				 \hline
+				 Please select your the grade export type: & 3 enter\\
+				 1- Last &\\
+  			 2- Best &\\
+  			 3- Average &\\
+  			 ENTER THE NUMBER FOR YOUR &\\
+			   CHOICE, OR PRESS $<$ENTER$>$ & \\
+			   TO ACCEPT THE DEFAULT: & \\
+  			 \hline
+  			 Pre-Installation Summary & enter \\
+  			 ------------------------ & \\
+				 Please Review the Following Before Continuing:& \\
+				
+				 Product Name: Maple T.A. 6 & \\
+				
+				 Install Folder: /usr/local/MapleT.A.6& \\
+				
+				 Disk Space Information (for Installation Target):& \\
+				 Required:  328.062.992 bytes& \\
+				 Available: 22.089.043.968 bytes& \\
+				 PRESS $<$ENTER$>$ TO CONTINUE:& \\
+				 \hline
+				 Installation completed. & enter \\
+				 Please press enter to exit &\\
+				 \hline
+			\end{tabular}
+		\item Restart apache 2 en start tomcat
+			\begin{quote}
+				sudo /etc/init.d/apache2 restart
+				
+				sudo /etc/init.d/tomcat6 restart
+			\end{quote}
+		\item Test MapleTA door naar de site te gaan en in te loggen
+\end{enumerate}
+
+In de bovenstaande handleiding worden de instellingen van de ldap.properties niet vermeld, vanwege het geheimhoudingsplicht. 
+
+De instellingen voor de proxy worden nog niet erbij vermeld omdat het nog niet zeker is dat het de juiste instellingen zijn. 
+
+
+%\bijlage{UML diagrammen}
+
+%\bijlage{Gebruikshandleiding}
+
+
+
