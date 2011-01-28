@@ -1,0 +1,39 @@
+\chapter{Codesystemen voor storingsvrije omgevingen}
+
+\section{Opdracht 1}
+Een bron genereert een onafhankelijke rij symbolen uit het alfabet $\{0,1\}$. De kans op een 0 is $0,9$, ed kans op een 1 is $0,1$. De rij getallen wordt met een 'Run-Length codering' gecodeerd tot een rij met symbolen uit het alfabet $\{a,b,c,d,e,f,g,h,i\}$. Tenslotte wordt deze 'run length' codewoorden weer gecodeerd met een hoffmancode.
+
+\begin{tabular}{l|l}
+  b-code & r-code \\
+  \hline
+  1 & a\\
+  01 & b\\
+  001 & c\\
+  0001 & d\\
+  00001 & e\\
+  000001 & f\\
+  0000001 & g\\
+  00000001 & h\\
+  00000000 & i
+\end{tabular}
+\begin{itemize}
+  \item[(a)] Bereken de entropie van de bron.
+  \item[(b)] Bereken het gemiddeld aantal bronsymbolen per run-length codewoord.
+  \item[(c)] Bereken het gemiddeld aantal bit van de Huffmancode per run-length woord.
+  \item[(d)] Bereken het gemiddelde aantal bronsymbolen \emph{b} per Huffmansymbool \emph{h}.
+\end{itemize}
+
+\section{Opdracht 4}
+Waarom zouden de makers van '\emph{gzip}' de blokverwijzingen beperkt hebben?
+
+\sectiony{Opdracht 5}
+In het DNA van de bacterie \emph{Micrococcus Lysodeiktus} hebben de basen \emph{A, C, T, G} de volgende waarschijnlijkheid: $P(A)=P(T)=29/200$ en $P(C)=P(G)=71/200$. Bij de bacterie $E. Coli$ is deze verdeling: $P(A)=P(T)=P(C)=P(G)=1/4$. Welke bacterie zou van de twee het meest complexe organisme zijn?
+
+\section{Opdracht 6}
+Het decompressie-algoritme van het programma '\emph{bzip2}' maakt gebruik van een inversie permutatie $T(i)$ om uit de laatste kolom de bronrij terug te vinden. Wat is er fout aan de volgende redenatie om de bronrij terug te vinden uiut tabel 2.5, gegeven dat de rij-index van de bronrij de waarde 3 heeft?
+
+\begin{quote}
+Men kan uit de tabel 2.5 aflezen dat de onbekende bronrij moet beginnen met een '\emph{o}' (Rij 3, kolom 2) en eindigen met een '\emph{b}' (rij 3 kolom 1). Vervolgens blijkt de rij bronsymbolen uit alle andere tweetallen te zijn opgebouwd voor de tussenliggende sumbolen: '$ob$', '$ro$', '$oo$', '$rr$', '$or$'. Wij weten alleen niet in welke volgorde. Wel is bekend dat elk tweetal exact \'{e\'{e}n keer gebruikt moet worden.
+
+Met deze gegevens kunnen wij de bronrij herstellen: Start met '$o$' dan zijn er twee volgende letters mogelijk: '$b$' en '$o$' (vanwege '$bo$' en '$oo$') De rij '$ob$' heeft geen opvolger en is dus geen oplossing. De rij '$oo$' heeft als uitbreiding '$oor$' (Vanwege '$or$'). Dit passen en meten kunnen wij herhalen tot wij de orginele bronrij '$oorrob$' gevonden hebben.
+\end{quote}
