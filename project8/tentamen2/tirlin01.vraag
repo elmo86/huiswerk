@@ -1,7 +1,7 @@
 !version 1
 # Dit document bevat een paar voorbeeld vragen en wat syntax die het programma begrijpt
-nTIRLIN01
-iLinux voor beginners eindtentamen
+nCMILIN01
+iLinux voor beginners Testtentamen
 
 !rand_andwoorde
 !rand_vragen
@@ -36,11 +36,18 @@ p1
 -Down
 
 !NEXT
+!static_andwoorde
 ?Wat is het antwoord op deze vraag
 t5000
+>A,B,C,D,E
 p1
-+Dit antwoord
--Een ander antwoord
--Anders
+-B
+-C
+-E
++D
+-A
+
+#!NEXT
+#!rand_andwoorde
 
 !END

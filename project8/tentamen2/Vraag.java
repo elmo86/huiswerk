@@ -17,15 +17,11 @@ public class Vraag {
     public void setPunten(String punten) {l_Punten = punten;} // parse
     public void setButtons(String buttons) {l_Buttons = buttons;}
 
-    public void setTijd(String tijd) {
-        try {
-            l_Tijd = Integer.parseInt(tijd);
-        }
-        catch(Exception ex) {
-            l_Tijd = 0;
-        }
+    public void setTijd(String tijd) { 
+        try { l_Tijd = Integer.parseInt(tijd); }
+        catch(Exception ex) { l_Tijd = 0; }
     }
-    public int getTime() {return  l_Tijd; }
+    public int getTime() { return l_Tijd; }
 
     public void setAchtergrond(String value) {l_Afbeelding = new ImageIcon(value); System.out.println(value + " loaded"); }
     public ImageIcon getAchtergrond() { return l_Afbeelding;  }
