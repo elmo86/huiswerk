@@ -1,5 +1,6 @@
 \chapter{Coderingen voor storingsrijke omgevingen}
 
+<<<<<<< HEAD
 \section{Opdracht 1 *}
 Een BSC heeft een \emph{Binary Error Rate} van 0,3. Wat is de discrete kanaalcapaciteit van dit kanaal?
 
@@ -9,12 +10,22 @@ Noem 3 decodeerprincipes en hun eigenschappen.\\
 
 \section{Opdracht 3 *}
 De \emph{Soundex codering} is een codering die bronwoorden uit een West Europesche spreektaal vertaalt in codewoorden van \'{e}\'{e}n letter gevolgd door drie cijfers. Het voordeel van deze codering is dat de woorden is dat de woorden die veel op elkaar lijken qua uitspraak, dezelfde code krijgen. Soundex wordt veel toegepast in spellingscontrole in woordproccesssoren, reisplanners en reserveringssystemen etc. Bijvoorbeeld, de namen \emph{'brok', 'brock', 'broek'} geven dezelfde code B620. Daarentegen geven de namen \emph{'jansen', 'janssen', 'jansens'} de \emph{J525}.
+=======
+\section{Opdracht 1}
+\emph{Een BSC heeft een \emph{Binary Error Rate} van 0,3. Wat is de discrete kanaalcapaciteit van dit kanaal?}
 
-Het soundex-algoritme werkt als volgt:
+\section{Opdracht 2}
+\emph{Noem 3 decodeerprincipes en hun eigenschappen.}
+
+\section{Opdracht 3}
+\emph{De \emph{Soundex codering} is een codering die bronwoorden uit een West Europesche spreektaal vertaalt in codewoorden van \'{e}\'{e}n letter gevolgd door drie cijfers. Het voordeel van deze codering is dat de woorden is dat de woorden die veel op elkaar lijken qua uitspraak, dezelfde code krijgen. Soundex wordt veel toegepast in spellingscontrole in woordproccesssoren, reisplanners en reserveringssystemen etc. Bijvoorbeeld, de namen \emph{'brok', 'brock', 'broek'} geven dezelfde code B620. Daarentegen geven de namen \emph{'jansen', 'janssen', 'jansens'} de \emph{J525}.}
+>>>>>>> 54e35addffd3a54f8b1f4d765d2620d0e7cd6cb5
+
+\emph{Het soundex-algoritme werkt als volgt:
 \begin{itemize}
   \item[(a)]De eerste letter van het bronwoord wordt de beginletter in het Soundex codewoord;
   \item[(b)]De volgende 3 cijfers komen uit de volgende tabel. Zijn worden in volgorde opgebouwd in volgorde van de letters in het bronwoord. Als whet bronwoord te kort is voor een volledig Soundex codewoord, wordt het Soundex codewoord aangevuld met nullen. Te lange codewoorden worden afgebroken na drie cijfers.
-\end{itemize}
+\end{itemize}}
 
 \begin{tabular}{lll}
 code & letter & uitspraakorgaan \\
@@ -28,10 +39,8 @@ code & letter & uitspraakorgaan \\
 geen & a e h i o u y w & \\
 \end{tabular}
 
-
-Deze tabel geeft de cijfercodering van de letters aan. De meeste medeklinkers zijn volgens uitspraak gegroepeerd. De klinkers en de zachte medeklinkers krijgen geen cijfercode. Hoewel het Soundex-algoritme goed werkt voor West-Europese talen, is het niet voor andere spreektalen geschikt.
-
-\begin{itemize}
+\emph{Deze tabel geeft de cijfercodering van de letters aan. De meeste medeklinkers zijn volgens uitspraak gegroepeerd. De klinkers en de zachte medeklinkers krijgen geen cijfercode. Hoewel het Soundex-algoritme goed werkt voor West-Europese talen, is het niet voor andere spreektalen geschikt.}
+\emph{\begin{itemize}
   \item[(a)] Welke aspecten maken Soundex codering geschikt voor Weste-Europese talen?
   \item[(b)] Een andere manier om alternatieve woorden te vinden is de '\emph{Edit Distance}':
     \begin{itemize}
@@ -42,18 +51,34 @@ Deze tabel geeft de cijfercodering van de letters aan. De meeste medeklinkers zi
       \item Een letter toevoegen.
     \end{itemize}
     Wat is het belanrijkste verschil tussen de 'Edit Distance' en Soundex?
-\end{itemize}
+\end{itemize}}
 
+<<<<<<< HEAD
 \section{Opdracht 4 *}
 Gegeven een taal met 8 bronwoorden van 3 bit.
+=======
+\section{Opdracht 4}
+\emph{Gegeven een taal met 8 bronwoorden van 3 bit.
+>>>>>>> 54e35addffd3a54f8b1f4d765d2620d0e7cd6cb5
 \begin{itemize}
   \item[(A))] Hoeveel redundantie moeten de codewoorden bevatten om een taal met 8 bronwoorden van ieder 3 bit intolerant voor 2 bit fouten te maken?
 \item[(b)] Welke CRC-polynoom zou in aanmerking komen om de bronwoorden te beschermen tegen 1 en 2 bit fouten?
-\end{itemize}
+\end{itemize}}
 
+<<<<<<< HEAD
 \section{Opdracht 5 *}
 Een geheugenloos kanaal tussen \emph{X} en \emph{Y} heeft de volgende eigenschappen $P(Y=y|X=x)=0,5$
 \begin{itemize}
   \item[(a)] Bepaal de discrete kanaalcapaciteit van het kanaal in figuur 5.5?
   \item[(b)] Ontwerp een transmissiecode waarmee via dit kanaal foutloze transmisse plaats kan vinden.
 \end{itemize}
+=======
+\section{Opdracht 5}
+\emph{Een geheugenloos kanaal tussen \emph{X} en \emph{Y} heeft de volgende eigenschappen $P(Y=y|X=x)=0,5$
+\begin{itemize}
+  \item[(a)] Bepaal de discrete kanaalcapaciteit van het kanaal in figuur 5.5?
+  \item[(b)] Ontwerp een transmissiecode waarmee via dit kanaal foutloze transmisse plaats kan vinden.
+\end{itemize}}
+
+
+>>>>>>> 54e35addffd3a54f8b1f4d765d2620d0e7cd6cb5
