@@ -3,16 +3,16 @@
 \section{Opdracht 1 *}
 Een BSC heeft een \emph{Binary Error Rate} van 0,3. Wat is de discrete kanaalcapaciteit van dit kanaal?
 
-\section{Opdracht 2 *Pp}
+\section{Opdracht 2 I}
 \emph{Noem 3 decodeerprincipes en hun eigenschappen.}\\
 
 \begin{itemize}
   \item[MAP] Maximum-a-Posteriori is een decodeerprincipe die gebruik maakt van over het algemeen zo laag mogelijke decodeer fout te houden. Het decodeerprincipe kiest een zo grootmogelijke $x_i$ uit $P(X=x_i|Y=y_i)$ waardoor het codewoord $y_i$ het meest in de buurt komt.
   \item[ML] Maximum Likelihood is een decodeerprincipe die voornamelijk gebruiktwoort bij het decoderen van uniform verdeelde bronwoorde. om dit te doen dient je een $x_i$ zo hoog mogelijk te hebben bij $P(Y=y_i|X=x_i)$ ($y_i$ is in dit geval het code woord)
-  \item[MD] Minimum Distance \ldots
+  \item[MD] Minimum Distance is een decodeerprincipes kiest een codewoord $x_i$ wat zodichtmogelijk bij $y_i$ licht qua symbolen. het  woort voornamelijk gebruikt bij cyberteksten waar genoeg redudantie in is hierdoor kan er voldoende afstand tussen de code woorden woorden berijkt.
 \end{itemize}
 
-\section{Opdracht 3 *}
+\section{Opdracht 3 I}
 De \emph{Soundex codering} is een codering die bronwoorden uit een West Europesche spreektaal vertaalt in codewoorden van \'{e}\'{e}n letter gevolgd door drie cijfers. Het voordeel van deze codering is dat de woorden die veel op elkaar lijken qua uitspraak, dezelfde code krijgen. Soundex wordt veel toegepast in spellingscontrole in woordproccesssoren, reisplanners en reserveringssystemen etc. Bijvoorbeeld, de namen \emph{'brok', 'brock', 'broek'} geven dezelfde code B620. Daarentegen geven de namen \emph{'jansen', 'janssen', 'jansens'} de \emph{J525}.
 
 \emph{Het soundex-algoritme werkt als volgt:}
@@ -34,8 +34,9 @@ geen & a e h i o u y w & \\
 \end{tabular}
 
 \emph{Deze tabel geeft de cijfercodering van de letters aan. De meeste medeklinkers zijn volgens uitspraak gegroepeerd. De klinkers en de zachte medeklinkers krijgen geen cijfercode. Hoewel het Soundex-algoritme goed werkt voor West-Europese talen, is het niet voor andere spreektalen geschikt.}
-\emph{\begin{itemize}
-  \item[(a)] Welke aspecten maken Soundex codering geschikt voor Weste-Europese talen?
+\begin{itemize}
+  \item[(a)] \emph{Welke aspecten maken Soundex codering geschikt voor Weste-Europese talen?}
+    Deze coderingen is alleen geschikt voor westerse talen omdat het gebruik maakt van klanken die over het algemeen voor komen in de westerse omgeving. In andere gebieden kunnen minder klanken zijn of zijn er veel meer letters met de zelfde klank.
   \item[(b)] Een andere manier om alternatieve woorden te vinden is de '\emph{Edit Distance}':
     \begin{itemize}
       \item Spatie tussenvoegen;
@@ -44,10 +45,11 @@ geen & a e h i o u y w & \\
       \item Het verwijderen van een letter;
       \item Een letter toevoegen.
     \end{itemize}
-    Wat is het belanrijkste verschil tussen de 'Edit Distance' en Soundex?
-\end{itemize}}
+    \emph(Wat is het belanrijkste verschil tussen de 'Edit Distance' en Soundex?)
+    Het belangrijkste verschil is in dit geval dat Soundex een vaste lengte heeft. bij de andere manieren die hier boven staan is er geen vaste lengte gespecificeert.
+\end{itemize}
 
-\section{Opdracht 4}
+\section{Opdracht 4 R}
 \emph{Gegeven een taal met 8 bronwoorden van 3 bit.}
 
 \begin{itemize}
@@ -55,7 +57,7 @@ geen & a e h i o u y w & \\
 \item[(B)] Welke CRC-polynoom zou in aanmerking komen om de bronwoorden te beschermen tegen 1 en 2 bit fouten?
 \end{itemize}
 
-\section{Opdracht 5}
+\section{Opdracht 5 R}
 \emph{Een geheugenloos kanaal tussen \emph{X} en \emph{Y} heeft de volgende eigenschappen $P(Y=y|X=x)=0,5$
 \begin{itemize}
   \item[(A)] Bepaal de discrete kanaalcapaciteit van het kanaal in figuur 5.5?
