@@ -1,0 +1,128 @@
+\documentclass[a4paper,11pt]{report}
+% Hier hebben we de preamble, alle document settings moeten hier:
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{appendix}
+\usepackage[titles]{tocloft}
+\usepackage[dutch]{babel}
+\usepackage{listings}
+\usepackage{makeidx}
+\usepackage{float}
+\usepackage[hypertexnames=false]{hyperref}
+
+% Custom LaTeX commands:
+% ~ == {\raise.17ex\hbox{$\scriptstyle\sim$}}
+\newcommand{\customtilde}{\raise.17ex\hbox{$\scriptstyle\sim$}}
+% Meta info pdf:
+\hypersetup{
+%bookmarks=true, % show bookmarks bar?
+unicode=false, % non-Latin characters in Acrobat’s bookmarks
+pdftoolbar=true, % show Acrobat’s toolbar?
+pdfmenubar=false, % show Acrobat’s menu?
+pdffitwindow=false, % window fit to page when opened
+%pdfstartview={FitH}, % fits the width of the page to the window
+pdftitle={Project 7/8}, % title
+pdfauthor={Paul Sohier Sebastiaan Polderman}, % author
+pdfsubject={Project 7/8}, % subject of the document
+pdfcreator={make}, % creator of the document
+pdfproducer={make}, % producer of the document
+pdfkeywords={Linux} {Basis}, % list of keywords
+pdfnewwindow=true, % links in new window
+colorlinks=false, % false: boxed links; true: colored links
+linkcolor=black, % color of internal links
+citecolor=green, % color of links to bibliography
+filecolor=magenta, % color of file links
+urlcolor=cyan % color of external links
+}
+
+% Paragrafen hebben een witregel ertussen, en geen indent tab:
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+% Onderstaande is voor de dots tussen chapter title + blz. 
+\makeatletter
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 1.0em \@plus\p@
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\normalfont\leaders\hbox{$\m@th
+        \mkern \@dotsep mu\hbox{.}\mkern \@dotsep
+        mu$}\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+      \penalty\@highpenalty
+    \endgroup
+  \fi}
+\makeatother
+
+% End of title + blz.
+% Table of content depth van 4, dus tm paragraph
+\setcounter{tocdepth}{4}
+%\renewcommand{\baselinestretch}{1.5} 1.5 regelafstand 
+
+%Pas listings aan zodat ze duidelijker zijn
+\lstset{ %
+  language=bash,                % choose the language of the code
+  basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=lr,	                % adds left and right lines
+  tabsize=2,	                % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+%  escapeinside={\%*}{*)},         % if you want to add a comment within your code
+  morekeywords={*,...}            % if you want to add more keywords to the set
+}
+%hyperref aanpassingen
+\hypersetup{pdfborder=0 0 0}
+% We gebruiken de index
+\makeindex
+
+% Einde preamble, begin document; 
+\begin{document}
+% Title page
+\title{
+  Project 7/8 eindverslag
+}
+\author{
+  Sebastiaan Polderman\\
+  0820738
+  \and
+  Paul Sohier\\
+  0806122
+}
+\date{\today}
+% Print de title
+\maketitle
+
+% Abstract (+ in toc)?:
+%\begin{abstract}\centering
+
+%\end{abstract}
+
+% De table of contents + toc in toc:
+\tableofcontents
+\addcontentsline{toc}{chapter}{\numberline{}Inhoudsopgave}
+
+% HACK: Page number fixen. Dit is voor makeidx + hyperref
+% 15 is de pagina met hoofdstuk 01, dus inleiding erop. 
+% Dit zorgt ervoor dat alle
+%\setcounter{page}{3}
+% Nu kunnen we de losse hoofdstukken gaan includen. 
+% Includen gebeurt met basename, dus zonder .tex
+\include{hoofdstuk_01}
+\include{hoofdstuk_02}
+\include{hoofdstuk_03}
+\include{hoofdstuk_04}
+
+% Einde document
+\end{document}

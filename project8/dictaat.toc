@@ -1,0 +1,21 @@
+\select@language {dutch}
+\contentsline {chapter}{\hbox to\@tempdima {\hfil }Inhoudsopgave}{1}{chapter*.1}
+\contentsline {chapter}{\numberline {1}Inleiding}{2}{chapter.2}
+\contentsline {chapter}{\numberline {2}Het project}{3}{chapter.3}
+\contentsline {section}{\numberline {2.1}Antwoord kastje}{3}{section.4}
+\contentsline {subsection}{\numberline {2.1.1}Microprocessor}{4}{subsection.5}
+\contentsline {subsection}{\numberline {2.1.2}Knoppen}{4}{subsection.6}
+\contentsline {subsection}{\numberline {2.1.3}RS485}{5}{subsection.7}
+\contentsline {subsection}{\numberline {2.1.4}Voeding}{5}{subsection.8}
+\contentsline {subsection}{\numberline {2.1.5}LEDs}{5}{subsection.9}
+\contentsline {subsection}{\numberline {2.1.6}Overige componenten}{5}{subsection.10}
+\contentsline {section}{\numberline {2.2}Computersoftware}{6}{section.11}
+\contentsline {subsection}{\numberline {2.2.1}Vragen weergave}{6}{subsection.12}
+\contentsline {subsection}{\numberline {2.2.2}Communicatie}{6}{subsection.13}
+\contentsline {chapter}{\numberline {3}RS485}{7}{chapter.14}
+\contentsline {chapter}{\numberline {4}Project verloop}{8}{chapter.15}
+\contentsline {section}{\numberline {4.1}Eerste onderzoek}{8}{section.16}
+\contentsline {section}{\numberline {4.2}Ontwerp}{8}{section.17}
+\contentsline {section}{\numberline {4.3}Computer programma}{8}{section.18}
+\contentsline {section}{\numberline {4.4}Electronica}{8}{section.19}
+\contentsline {section}{\numberline {4.5}Eindresultaat}{8}{section.20}
