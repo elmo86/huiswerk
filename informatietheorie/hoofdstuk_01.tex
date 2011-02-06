@@ -25,5 +25,18 @@ De drie bestaande lidwoorden zijn veel gebruikte woorden in de Nederlandse taal.
 \section{Opdracht 5}
 \emph{Binare Coded Decimals ('BCD') is een code waarbij een getal van 0, 1, 2, \ldots, 99 in een 8 bit-woord (een '\emph{byte}') gecodeerd wort. Hoeveel redundantie bevat zo'n BCD-woord?}
 
+Om de redundantie te berekenen hebben we eerst de entropie en de maximale entropie nodig om dit te kunnen berekenen.
 
+\texttt{Minimale entropie}
 
+$H(X)=-lim(p*ld(p))=0$
+Ofwel
+$p=1$
+
+\texttt{Maximale entropie}
+
+$H_{max}(X)=ld(x)=ld(8)=3$
+
+De redundantie hierna is dus:
+
+$R(X)=H_{max}(X)-H(X)=3/1=3$
