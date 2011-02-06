@@ -1,18 +1,18 @@
 \chapter{Coderingen voor storingsrijke omgevingen}
 
 \section{Opdracht 1 *}
-Een BSC heeft een \emph{Binary Error Rate} van 0,3. Wat is de discrete kanaalcapaciteit van dit kanaal?
+\emph{Een BSC heeft een \emph{Binary Error Rate} van 0,3. Wat is de discrete kanaalcapaciteit van dit kanaal?}
 
-\section{Opdracht 2 I}
+\section{Opdracht 2}
 \emph{Noem 3 decodeerprincipes en hun eigenschappen.}\\
 
 \begin{itemize}
-  \item[MAP] Maximum-a-Posteriori is een decodeerprincipe die gebruik maakt van over het algemeen zo laag mogelijke decodeer fout te houden. Het decodeerprincipe kiest een zo grootmogelijke $x_i$ uit $P(X=x_i|Y=y_i)$ waardoor het codewoord $y_i$ het meest in de buurt komt.
-  \item[ML] Maximum Likelihood is een decodeerprincipe die voornamelijk gebruiktwoort bij het decoderen van uniform verdeelde bronwoorde. om dit te doen dient je een $x_i$ zo hoog mogelijk te hebben bij $P(Y=y_i|X=x_i)$ ($y_i$ is in dit geval het code woord)
-  \item[MD] Minimum Distance is een decodeerprincipes kiest een codewoord $x_i$ wat zodichtmogelijk bij $y_i$ licht qua symbolen. het  woort voornamelijk gebruikt bij cyberteksten waar genoeg redudantie in is hierdoor kan er voldoende afstand tussen de code woorden woorden berijkt.
+\item[MAP] Maximum-a-Posteriori is een decodeerprincipe die gebruik maakt van over het algemeen zo laag mogelijke decodeer fout te houden. Het decodeerprincipe kiest een zo grootmogelijke $x_i$ uit $P(X=x_i|Y=y_i)$ waardoor het codewoord $y_i$ het meest in de buurt komt.
+\item[ML] Maximum Likelihood is een decodeerprincipe die voornamelijk gebruiktwoort bij het decoderen van uniform verdeelde bronwoorde. om dit te doen dient je een $x_i$ zo hoog mogelijk te hebben bij $P(Y=y_i|X=x_i)$ ($y_i$ is in dit geval het code woord)
+\item[MD] Minimum Distance is een decodeerprincipes kiest een codewoord $x_i$ wat zodichtmogelijk bij $y_i$ licht qua symbolen. het  woort voornamelijk gebruikt bij cyberteksten waar genoeg redudantie in is hierdoor kan er voldoende afstand tussen de code woorden woorden berijkt.
 \end{itemize}
 
-\section{Opdracht 3 I}
+\section{Opdracht 3}
 De \emph{Soundex codering} is een codering die bronwoorden uit een West Europesche spreektaal vertaalt in codewoorden van \'{e}\'{e}n letter gevolgd door drie cijfers. Het voordeel van deze codering is dat de woorden die veel op elkaar lijken qua uitspraak, dezelfde code krijgen. Soundex wordt veel toegepast in spellingscontrole in woordproccesssoren, reisplanners en reserveringssystemen etc. Bijvoorbeeld, de namen \emph{'brok', 'brock', 'broek'} geven dezelfde code B620. Daarentegen geven de namen \emph{'jansen', 'janssen', 'jansens'} de \emph{J525}.
 
 \emph{Het soundex-algoritme werkt als volgt:}
@@ -53,7 +53,21 @@ geen & a e h i o u y w & \\
 \emph{Gegeven een taal met 8 bronwoorden van 3 bit.}
 
 \begin{itemize}
-  \item[(A))] Hoeveel redundantie moeten de codewoorden bevatten om een taal met 8 bronwoorden van ieder 3 bit intolerant voor 2 bit fouten te maken?
+\item[(A)] \emph{Hoeveel redundantie moeten de codewoorden bevatten om een taal met 8 bronwoorden van ieder 3 bit intolerant voor 2 bit fouten te maken?}
+
+\begin{tabular}{|l|l|l|l|}
+  \hline
+  Bronwoord & Tolerantie toevoeging & Codewoord \\ \hline
+  000 & 1111 & 0001111 \\ \hline
+  001 & 0011 & 0010011 \\ \hline
+  010 & 1010 & 0101010 \\ \hline
+  011 & 1100 & 0111100 \\ \hline
+  100 & 0000 & 1000000 \\ \hline
+  101 & 0110 & 1010110 \\ \hline
+  110 & 0101 & 1100101 \\ \hline
+  111 & 1001 & 1111001 \\ \hline
+\end{tabular}
+
 \item[(B)] Welke CRC-polynoom zou in aanmerking komen om de bronwoorden te beschermen tegen 1 en 2 bit fouten?
 \end{itemize}
 
