@@ -5,20 +5,16 @@
 \begin{itemize}
   \item[(a)] Hoe groot is de selectieve informatie over elke kleur van het vakje? \emph{1 bit}
   \item[(b)] Hoe groot is de gemiddelde informatie over de kleur van het vakje? \emph{1 bit}
-  \item[(c)] Hoe groot is de gemiddelde informatie over het nummer van het vakje? \emph{$(16*5+8*4+4*3+2*2+1*1)/36=3.58bit$}
+  \item[(c)] Hoe groot is de gemiddelde informatie over het nummer van het vakje? \emph{$(2*6+16*5+8*4+4*3+2*2+1*1)/38=3.71bit$}
   \item[(d)] Hoe groot is de conditionele entropie (equivocatie) van de kleur als het nummer van het vakje al bekend is?
-\begin{displaymath}
-H(N|K)=E(HN|K=x_i))=-\sum^{|x|}_i \sum^{|y|}_j \bigl(p_{i}\cdot (p_{j|i} \cdot ld (p_{j|i}) \bigr) = -\sum^{|y|}_j\bigl(p_{j|i} \cdot ld(p_{j|i})\bigr)
-\end{displaymath}
-  \item[(e)] Hoe groot is de conditionele entropie (equivocatie) van het nummer als de kleur van het vakje al bebend is?\emph{}
+    De entropy $H(X)$ is $H(X)=-0,4736842105\cdot ld(0,4736842105) -0,4736842105 \cdot ld(0,4736842105) -0,0526315789 \cdot ld(0,0526315789)=1.24bit$
+    De conditionale entropie is: $H(Y|X)=P(X=a)\cdot H(Y|X=a)+P(X=b)\cdot H(Y|X=b)=0,4736842105\cdot-0,0526315789 + 0,4736842105=0.498bit$
+  \item[(e)] Hoe groot is de conditionele entropie (equivocatie) van het nummer als de kleur van het vakje al bebend is?$H(X|Y)=P(Y=a)\cdot H(X|Y=a)+P(Y=b)\cdot H(X|Y=b)=-0.0526315789\cdot 0.4736842105 + 0.0526315789=0.027bit$
   \item[(f)] Hoe groot is de gemeenschappelijke entropie van de kleur en het nummer van het vakje?\emph{}
   \item[(g)] Hoe groot is de onderlingen entropie van de kleur en het nummer van het vakje?\emph{}
   \item[(h)] maak van $H(N,K)$, $H(K)$, $H(N)$, $H(N|K$, $H(N;K)$, $H(K|N)$ een schema zoals figuur 1.3. Houd rekening met de getalswaarde van de entropie\"{e}n.
 \end{itemize}}
 
-\begin{itemize}
-  \item[(a)]
-\end{itemize}
 
 \section{Opdacht 4}
 \emph{Volgens bijlage D komen in normale teksten korte woorden frequenter voor dan lange woorden. In het 'Groene boekje' woordenlijst van de Nederlandse taal) blijkt dat niet te kloppen.  Geef hier een verklaring voor.}
