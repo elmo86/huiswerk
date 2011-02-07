@@ -1,0 +1,96 @@
+!version 1
+# Dit document bevat een paar voorbeeld vragen en wat syntax die het programma begrijpt
+nCMILIN01
+iLinux voor beginners Testtentamen
+
+!rand_andwoorde
+!rand_vragen
+
+!NEXT
+?Test vraag
+t10000
+<./back8.jpg
+p0
+>:)
++Geen andwoord of dit andwoord
+
+!NEXT
+?Wat is linux
+t10000
+p1
+<./back1.jpg
+>A,B,C
++Een OS (Operating System)
+-Een pak jogert bij de supermarkt
+-Een onderdeel van Windows
+
+!NEXT
+?What is the airspeed velocity of an unladen swallow
+t10000
+<./back2.jpg
+p1
+>A,B
++African
++European
+
+!NEXT
+?War isn't about who's right, but about who's...
+t10000
+<./back3.jpg
+p1
+>A,B,C,D
+-Right
++Left
+-Up
+-Down
+
+!NEXT
+!static_andwoorde
+?Wat is het antwoord op deze vraag
+t10000
+<./back4.jpg
+>A,B,C,D,E
+p1
+-B
+-C
+-E
++D
+-A
+
+!NEXT
+!rand_andwoorde
+?Vraag testje
+t10000
+<./back5.jpg
+p1
+>A,B,C,D
+-Right
++Left
+-Up
+-Down
+
+!NEXT
+!rand_andwoorde
+?Vraag testje
+t10000
+<./back6.jpg
+p1
+>A,B,C,D
+-Right
++Left
+-Up
+-Down
+
+!NEXT
+!rand_andwoorde
+?Vraag testje
+t10000
+<./back7.jpg
+p1
+>A,B,C,D
+-Right
++Left
+-Up
+-Down
+
+!END
