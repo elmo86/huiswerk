@@ -18,10 +18,10 @@
 \end{tabular}
 \emph{
 \begin{itemize}
-  \item[(a)] Bereken de entropie van de bron.
-  \item[(b)] Bereken het gemiddeld aantal bronsymbolen per run-length codewoord.
-  \item[(c)] Bereken het gemiddeld aantal bit van de Huffmancode per run-length woord.
-  \item[(d)] Bereken het gemiddelde aantal bronsymbolen \emph{b} per Huffmansymbool \emph{h}.
+  \item[(a)] Bereken de entropie van de bron. \emph{$\sum^{2^{max}^{(x)}}_{i=1}-p_i\cdot ld(p_i)=\sum^{2^{max}^{(6)}}_{i=1}-6_i\cdot ld(6_i)=$}
+  \item[(b)] Bereken het gemiddeld aantal bronsymbolen per run-length codewoord. \emph{$44/9=4.889$}
+  \item[(c)] Bereken het gemiddeld aantal bit van de Huffmancode per run-length woord. \emph{$0,9*4,889+0,1*4,889=0,9$}
+  \item[(d)] Bereken het gemiddelde aantal bronsymbolen \emph{b} per Huffmansymbool \emph{$4,889/9=0,54$}.
 \end{itemize}}
 
 
@@ -33,6 +33,8 @@ Wanneer de blokverwijzing groter zou zijn dan zou de redundantie in de blokverwi
 \section{Opdracht 5}
 \emph{In het DNA van de bacterie \emph{Micrococcus Lysodeiktus} hebben de basen \emph{A, C, T, G} de volgende waarschijnlijkheid: $P(A)=P(T)=29/200$ en $P(C)=P(G)=71/200$. Bij de bacterie $E. Coli$ is deze verdeling: $P(A)=P(T)=P(C)=P(G)=1/4$. Welke bacterie zou van de twee het meest complexe organisme zijn?}
 
+De bacterie E.Colis zitten meer verschillende permissen waardoor de complexitijd toeneemt.
+
 \section{Opdracht 6}
 \emph{Het decompressie-algoritme van het programma '\emph{bzip2}' maakt gebruik van een inversie permutatie $T(i)$ om uit de laatste kolom de bronrij terug te vinden. Wat is er fout aan de volgende redenatie om de bronrij terug te vinden uit tabel 2.5, gegeven dat de rij-index van de bronrij de waarde 3 heeft?}
 
@@ -42,4 +44,5 @@ Men kan uit de tabel 2.5 aflezen dat de onbekende bronrij moet beginnen met een 
 Met deze gegevens kunnen wij de bronrij herstellen: Start met '$o$' dan zijn er twee volgende letters mogelijk: '$b$' en '$o$' (vanwege '$bo$' en '$oo$') De rij '$ob$' heeft geen opvolger en is dus geen oplossing. De rij '$oo$' heeft als uitbreiding '$oor$' (Vanwege '$or$'). Dit passen en meten kunnen wij herhalen tot wij de orginele bronrij '$oorrob$' gevonden hebben.
 \end{quote}
 
-In deze omschrijving woort bij de eerste stap de mogelijkheid '$or$' vermeden waardoor er niet uit blijkt dat er 2 manieren zijn van oplossen namelijk de oplossing '$oorrob$' waar op uitgekomen is dmv deze uitleg en de oplossing '$orroob$' als je ook '$or$' als opsie geeft bij mogelijkheid 1
+In deze omschrijving word bij de eerste stap de mogelijkheid '$or$' vermeden waardoor er niet uit blijkt dat er 2 manieren zijn van oplossen namelijk de oplossing '$oorrob$' waar op uitgekomen is dmv deze uitleg en de oplossing '$orroob$' als je ook '$or$' als optie geeft bij mogelijkheid 1.
+
