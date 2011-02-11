@@ -18,10 +18,11 @@
 \end{tabular}
 \emph{
 \begin{itemize}
-  \item[(a)] Bereken de entropie van de bron. \emph{$\sum^{2^{max}^{(x)}}_{i=1}-p_i\cdot ld(p_i)=\sum^{2^{max}^{(6)}}_{i=1}-6_i\cdot ld(6_i)=$}
-  \item[(b)] Bereken het gemiddeld aantal bronsymbolen per run-length codewoord. \emph{$44/9=4.889$}
-  \item[(c)] Bereken het gemiddeld aantal bit van de Huffmancode per run-length woord. \emph{$0,9*4,889+0,1*4,889=0,9$}
-  \item[(d)] Bereken het gemiddelde aantal bronsymbolen \emph{b} per Huffmansymbool \emph{$4,889/9=0,54$}.
+  \item[(a)] Bereken de entropie van de bron. \\
+    \emph{$H(X)=-0.9*ld(0.9)-0.1*ld(0.1)=0,469$}
+  \item[(b)] Bereken het gemiddeld aantal bronsymbolen per run-length codewoord. \emph{$45/9=5$ bronsymbolen}
+  \item[(c)] Bereken het gemiddeld aantal bit van de Huffmancode per run-length woord. \emph{$ld(9)=3.2$ bits}
+  \item[(d)] Bereken het gemiddelde aantal bronsymbolen \emph{b} per Huffmansymbool \emph{$5/ld(9)=1.577$ per huffmansymbool}.
 \end{itemize}}
 
 
@@ -33,7 +34,7 @@ Wanneer de blokverwijzing groter zou zijn dan zou de redundantie in de blokverwi
 \section{Opdracht 5}
 \emph{In het DNA van de bacterie \emph{Micrococcus Lysodeiktus} hebben de basen \emph{A, C, T, G} de volgende waarschijnlijkheid: $P(A)=P(T)=29/200$ en $P(C)=P(G)=71/200$. Bij de bacterie $E. Coli$ is deze verdeling: $P(A)=P(T)=P(C)=P(G)=1/4$. Welke bacterie zou van de twee het meest complexe organisme zijn?}
 
-De bacterie E.Colis zitten meer verschillende permissen waardoor de complexitijd toeneemt.
+Door de gelĳkere verdeling van E.coli lĳkt erop dat het DNA meer gecomprimeerd is waardoor de gegevens complexer zĳn.
 
 \section{Opdracht 6}
 \emph{Het decompressie-algoritme van het programma '\emph{bzip2}' maakt gebruik van een inversie permutatie $T(i)$ om uit de laatste kolom de bronrij terug te vinden. Wat is er fout aan de volgende redenatie om de bronrij terug te vinden uit tabel 2.5, gegeven dat de rij-index van de bronrij de waarde 3 heeft?}
