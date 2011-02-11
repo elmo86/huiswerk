@@ -4,7 +4,7 @@
 \emph{Probeer het volgende Ceasargecodeerde bericht teontcijferen:\\
 LNNZDPLNCDJHQLNRYHUZRQ}
 
-Het ondcijveren van dit Ceasargecodeerde bericht kan onderandere op de volgende manier door alle mogelijke uitkomste op te schrijven tot dat je een leesbaar bericht tegen komt
+Het ontcijferen van dit Ceasargecodeerde bericht kan onder andere op de volgende manier door alle mogelijke uitkomsten op te schrijven tot dat je een leesbaar bericht tegen komt.
 
 \begin{tabular}{|c|l|}
   \hline
@@ -14,20 +14,20 @@ Het ondcijveren van dit Ceasargecodeerde bericht kan onderandere op de volgende 
   3 & IKKWAMIKZAGENIKOVERWON \\\hline
 \end{tabular}
 
-In dit geval is de meest logiese uitkomst: Ik kwam ik zag en ik overwon
+In dit geval is de meest logische uitkomst: Ik kwam ik zag en ik overwon
 
 \section{Opdracht 2}
 \emph{Geef enkele voorbeelden waaruit blijkt dat berichten in het algemeen niet uniform verdeeld zijn. Welke oplossing is geschikt om deze berichten uniform verdeeld te maken?}
 
-Om een bericht uniform te verdelen is er onderandere een mogelijk hijd om het bedricht in te pakken ofwel comprimeren dit heeft als gevolg dat elk teken of teken reeks gemiddelt even vaak voorkomt.
+Om een bericht uniform te verdelen is er onderandere een mogelijkheid om het bericht in te pakken ofwel comprimeren dit heeft als gevolg dat elk teken of teken reeks gemiddeld even vaak voorkomt.
 
 \section{Opdracht 3}
 \emph{Een andere manier om geheime boodschappen te versturen is steganografie.}
 \begin{itemize}
-\item[(a)] \emph{Wanener zouden partijen steganografie gebruiken?} \\
-  Als er een open medium is waar het bericht over verstuurt kan woorden waardoor de daatwerkelijke bootschap geheim dient te blijven. Dit is veel gebruikt in het engelse verzet tijdens de orlog. (Er zijn destijds een hoop gijten gemolken)
+\item[(a)] \emph{Wanneer zouden partijen steganografie gebruiken?} \\
+  Als er een open medium is waar het bericht over verstuurt kan worden waardoor de daadwerkelijke boodschap geheim dient te blijven. Dit is veel gebruikt in het engelse verzet tijdens de oorlog. (Er zijn destijds een hoop geiten gemolken)
 \item[(b)] \emph{Wat is het nadeel van steganografie?}\\
-  Het nadeel van steganografie is dat als het code boek uitlekt iedereen weet wat de berichten betekenen en je beperkt ben tot een code boek om te achterhalen wat een code betekent. je kan namelijk niet alle comandows kwijd in een code boek.
+  Het nadeel van steganografie is dat als het code boek uitlekt iedereen weet wat de berichten betekenen en je beperkt ben tot een code boek om te achterhalen wat een code betekent. je kan namelijk niet alle commado's kwijt in een code boek.
 \end{itemize}
 
 \section{Opdracht 4}
@@ -35,7 +35,13 @@ Om een bericht uniform te verdelen is er onderandere een mogelijk hijd om het be
 
 \begin{itemize}
 \item[(a)] \emph{Welke principes zijn volgens Shannon noodzakelijk voor een betrouwbaar cryptografisch systeem?}\\
-  \ldots  http://en.wikipedia.org/wiki/Kerckhoffs\_principle \ldots
+\begin{itemize}
+  \item Het systeem moet praktische zijn
+  \item Het systeem moet niet geheim zijn
+  \item Het moet werken met telegrafie
+  \item Het moet portable zijn
+  \item Het moet makkelijk in gebruik zijn
+\end{itemize}
   
 \item[(b)] \emph{Als de letters uniform verdeeld zijn in een bericht dan hebben alle letters $i$ = 1\ldots26 evenveel kans om op te treden $p(X=a)=p_a=1/26$. Indien wij een ander bericht van gelijke lengte met willekeurig verdeelde letters op het eerste bericht leggen, dan is de kans dat een positie twee letters 'a' op elkaar liggen gelijk aan $P(X=a\cap x = a)=p_a^2=(1/26)^2=0,0385$. Als wij deze methode per taal uitvoeren, blijkt dat deze co\"{i}ncidentie per letter per taal veschilt. Om deze ereigenschap van een taal met een kental te beschrijven wordt zij gedefineerd als de \emph{co\"{i}ncidentie-index}: $i_c=\sum ^{26}_{i=1} p^2_i$:}
 
@@ -90,7 +96,7 @@ Om een bericht uniform te verdelen is er onderandere een mogelijk hijd om het be
 de $i_c$ van de nederlandse taal is 0,080016\\
 
    \item[(c)] \emph{Hoe zou de co\"{i}ncidentie-index $i_c$ gebruikt kunnen worden bij het kraken van een cipher-text?}\\
-     als de taal van de tekst bekent is dan kan bij onderandere een Ceasargecodeerd bericht sneller gezien woorden welke het is door een paar regels over elkaar te leggen.
+     als de taal van de tekst bekend is dan kan bij onder andere een Ceasargecodeerd bericht sneller gezien worden welke het is door een paar regels over elkaar te leggen.
 \end{itemize}
 
 \section{Opdracht 5}
@@ -103,6 +109,6 @@ De entropie dient zo hoog mogelijk te zijn zodat als C bekent is dat dan de K ni
   \item[(a)] \emph{Bereken de kritieke lengte van de cipher-text.}\\
     $\frac{H(K)}{R(P)}=\frac{ld(26)}{50\% \cdot ld(26)}=2$
     
-  \item[(b)] \emph{Indien de Nederlandse tekst gecom-primeerd wordt met een code-effici\"{e}ntie van 70\%, wat is dan de kritieke lengte van de Ceasar codering?}\\
+  \item[(b)] \emph{Indien de Nederlandse tekst gecomprimeerd wordt met een code-effici\"{e}ntie van 70\%, wat is dan de kritieke lengte van de Ceasar codering?}\\
     $\frac{H(K)}{R(P)}=\frac{ld(26)}{30\% \cdot ld(26)}=3\frac{1}{3}$
 \end{itemize}
