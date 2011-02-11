@@ -9,8 +9,8 @@ $1+0,3*ld(0,3)+(1-0,3)*ld(1-0,3)=0,11870910\ldots$
 
 \begin{itemize}
 \item[MAP] Maximum-a-Posteriori is een decodeerprincipe die gebruik maakt van over het algemeen zo laag mogelijke decodeer fout te houden. Het decodeerprincipe kiest een zo grootmogelijke $x_i$ uit $P(X=x_i|Y=y_i)$ waardoor het codewoord $y_i$ het meest in de buurt komt.
-\item[ML] Maximum Likelihood is een decodeerprincipe die voornamelijk gebruiktwoort bij het decoderen van uniform verdeelde bronwoorde. om dit te doen dient je een $x_i$ zo hoog mogelijk te hebben bij $P(Y=y_i|X=x_i)$ ($y_i$ is in dit geval het code woord)
-\item[MD] Minimum Distance is een decodeerprincipes kiest een codewoord $x_i$ wat zodichtmogelijk bij $y_i$ licht qua symbolen. het  woort voornamelijk gebruikt bij cyberteksten waar genoeg redudantie in is hierdoor kan er voldoende afstand tussen de code woorden woorden berijkt.
+\item[ML] Maximum Likelihood is een decodeerprincipe die voornamelijk gebruikt wordt bij het decoderen van uniform verdeelde bronworden. Om dit te doen dient je een $x_i$ zo hoog mogelijk te hebben bij $P(Y=y_i|X=x_i)$ ($y_i$ is in dit geval het code woord)
+\item[MD] Minimum Distance is een decodeerprincipes kiest een codewoord $x_i$ wat zo dicht mogelijk bij $y_i$ ligt qua symbolen. Het wordt voornamelijk gebruikt bij cyberteksten waar genoeg redudantie in is hierdoor kan er voldoende afstand tussen de code woorden worden bereikt.
 \end{itemize}
 
 \section{Opdracht 3}
@@ -19,7 +19,7 @@ De \emph{Soundex codering} is een codering die bronwoorden uit een West Europesc
 \emph{Het soundex-algoritme werkt als volgt:}
 \begin{itemize}
   \item[(a)]\emph{De eerste letter van het bronwoord wordt de beginletter in het Soundex codewoord}
-  \item[(b)]\emph{De volgende 3 cijfers komen uit de volgende tabel. Zijn worden in volgorde opgebouwd in volgorde van de letters in het bronwoord. Als whet bronwoord te kort is voor een volledig Soundex codewoord, wordt het Soundex codewoord aangevuld met nullen. Te lange codewoorden worden afgebroken na drie cijfers.}
+  \item[(b)]\emph{De volgende 3 cijfers komen uit de volgende tabel. Zijn worden in volgorde opgebouwd in volgorde van de letters in het bronwoord. Als het bronwoord te kort is voor een volledig Soundex codewoord, wordt het Soundex codewoord aangevuld met nullen. Te lange codewoorden worden afgebroken na drie cijfers.}
 \end{itemize}
 
 \begin{tabular}{lll}
@@ -70,7 +70,7 @@ geen & a e h i o u y w & \\
 \end{tabular}
 
 \item[(B)] \emph{Welke CRC-polynoom zou in aanmerking komen om de bronwoorden te beschermen tegen 1 en 2 bit fouten?}
-Een CRC-6 is voldoende want er diennen alleen maar 1 en 2 bit foute gedetecteert te woorden.
+Een CRC-6 is voldoende want er dienen alleen maar 1 en 2 bit foute gedetecteert te worden.
 \end{itemize}
 
 \section{Opdracht 5}
