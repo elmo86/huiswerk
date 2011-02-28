@@ -15,6 +15,8 @@ public class app
 		
 		if (!st.peek(s))
 		    st.push(s);
+		else
+		    System.out.println("Error?");
 	    }
 
 	System.out.println("===============================================");
@@ -31,8 +33,10 @@ public class app
 
 	System.out.println("===============================================");
 	st.printStack();
-	System.out.println("===============================================PUSH");
+	System.out.println("==================================== ===========PUSH");
+	System.out.println("Expected: 1 toevoeging, 1 double");
 	st.push(last);
+
 	if (!st.peek(last))
 	    st.push(last);
 	else

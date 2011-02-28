@@ -74,7 +74,6 @@ public class stack
 		System.out.println(e);
 		return null;
 	    }
-	//size--;
 
 	return last.getStudent();
     }
@@ -90,13 +89,12 @@ public class stack
 	for (int i = 0; i < getSize(); i++)
 	    {
 		student t = tmp.getStudent();
-		System.out.println(t.getStudent() == s.getStudent());
+
 		if (s.getStudent() == t.getStudent())
 		    {
-			System.out.println("BLABLA");
 			return true;
 		    }
-		tmp = start.getVolgend();	     
+		tmp = tmp.getVolgend();	     
 	    }
 
 	return false;
@@ -145,7 +143,11 @@ public class stack
 		tmp = tmp.getVolgend();
 	    }
     }
-
+    /**
+     * Haal het laatste studentElement op uit de stack
+     * @return studentElement
+     * @access private
+     **/
     private studentElement getLast()
     {
 	studentElement vorig = start;
@@ -160,22 +162,7 @@ public class stack
 			return vorig;
 		    }
 	    }
-	/*
-	int i = 0;
-	if (size <= 1)
-	    {
-		return start;
-	    }
-	System.out.println("START: " + size);
-	do
-	   {
-	       System.out.println(i);
-	       System.out.println(vorig);
-	       i++;
-	       vorig = vorig.getVolgend();
-	   }
-	while(vorig.volgend());
-*/	System.out.println("ERROR!");
+	System.out.println("ERROR!");
 	return null;
     }
 }
