@@ -1,6 +1,68 @@
-\chapter{Hoofdstuknaam}
-Wat teskst om uit te leggen
-\section{Sectienaam}
-Wat meer tekst
-\subsection{Subsectienaam}
-Nog meer tekst
+\chapter{De effici\"{e}ntie van programmatuur}
+\section{Opgave 1}
+Bepaal de herhalingsfrequentie $T(n)$ van:
+  \begin{itemize}
+    \item \texttt{for(i=n-1; i<n; i++)\{\}}
+    \item \texttt{for(i=n-1; i <n\^2; i++)\{\}}
+    \item \texttt{for(i=n; i<n; i++)\{\}}
+    \item \texttt{i=0; while(i < n) \{a[i] = 0\}}
+  \end{itemize}
+
+\section{Opdracht 2}
+Bepaal de O-notatie van:
+\begin{itemize}
+  \item $T(n)=17n^3-13n^2+10n+2000$
+  \item $T(N)=3^n-13n$
+  \item $T(n)=20log_2n+n^2$
+\end{itemize}
+
+\section{Opdracht 3}
+In het sorteeralgoritme \emph{SelectionSort} worden de elementen in een lijst $a[1\ldots{}n]$ verwisseld van plaats afhankelijk van het onderlinge verschil in waarde. Het algoritme begint bij het eerste element te verwisselen met het kleinste element in de rest van de lijst. Vervolgens wordt het tweede elelment verwisseld met het ena kleinste element in de lijst, etc.:
+\begin{lstlisting}
+void SelectionSort(lijst a){
+int i,j,k;
+i = 0;
+while(i < n){
+  j = ++i;
+  k = j;
+  while (j <= n){
+    if (a[j]<a[k]) k = j;
+    ++j;
+  }
+  verwissel(a; i; k);
+}
+}
+\end{lstlisting}
+Het soorteeralgoritme \emph{InsertionSort} werkt de lijst $a[1\ldots n]$ door, het eerste stuk $(1\ldots i)$ is gesorteerd, het tweede stuk $(i+1\ldots n$ is nog ongesorteerd.
+ Elk element $i+1$ uit het ongesorteerde lijstgedeelte wordt in het gesorteerde gedeelte tussengevoegd, waarna het gesorteerde gedeelte van de lijst met \'{e}\'{e}n element is toegenomen, ten koste vand e ongesorteerde deellijst:
+\begin{lstlisting}
+void InsertSort(lijst a){
+int i, j, ready;
+i = 1;
+while(i<n){
+  j = i++;
+  ready = 0;
+  while((j >=1)&&(ready==0)){
+    if (a[j+1]<a[j]){
+      verwissel(a;j+1;j);
+      --j;
+    }
+    ready=1;
+  }
+}
+\end{lstlisting}
+Bepaal van \emph{InsertionSort} en \emph{SelectionSort} de effici\"{e}ntie in P-notatie.
+
+\section{Opdracht 4}
+\emph{BubbleSort} maakt gebruik van herhaald verwisselen van buurelementen in een lijst. Een element wordt naar voren verplaatst indien het kleiner is dan het buurelement. Geef de tijdcomplexiteit in O-notatie van het \emph{BubbleSort} algoritme. Is dit slechter dan de complexiteit van \emph{SelectionSort} en \emph{InsertionSort}?
+
+\section{Opdracht 7}
+Een \emph{polynoom} $f(x)\sum_{n}^{i=0} a_ix^j$ ($a0\ldots a_n$) zijn co\"{e}ffici\"{e}nten) wordt meestal uitgeschreven als:
+\begin{displaymath}
+f(x)=a_nx^n+a_{n-1}x^{n-1}+a_{n-2}x^{n-2}+\ldots +a_1x^1+a0
+\end{displaymath}
+Wij kunnen de polynoon $f(x)$ herschrijven met de \emph{regel van Horner}:
+\begin{displaymath}
+  f(x)=((\ldots((a_nx+a_{n-a})x+a_{n-2})x\ldots)x+a1)x+a0
+\end{displaymath}
+

@@ -1,8 +1,0 @@
-\select@language {dutch}
-\contentsline {section}{\numberline {1}\bfseries Project omschrijving}{2}
-\contentsline {subsection}{\numberline {1.1}\slshape Software}{2}
-\contentsline {subsubsection}{\numberline {1.1.1}\rmfamily Computer}{2}
-\contentsline {subsubsection}{\numberline {1.1.2}\rmfamily Microcontroller}{3}
-\contentsline {subsection}{\numberline {1.2}\slshape Communicatie}{3}
-\contentsline {section}{\numberline {2}\bfseries Project verdeling}{3}
-\contentsline {section}{\numberline {3}\bfseries Project status}{4}
