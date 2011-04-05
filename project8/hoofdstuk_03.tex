@@ -1,6 +1,12 @@
-\chapter{RS485}
+\hoofdstuk{RS485}
 RS485 is een communicatie protocol wat ons in staat stelt om zonder grote wijzingen in de bedrading bij het toevoegen van een nieuw kastje gebruik te maken van stabiele communicatie. Het protocol staat over een grote lengte toe om te communiceren met een groot aantal nodes. Mocht de lengte tussen de nodes te groot zijn kan er indien nodig gebruik gemaakt worden van een RS485 repeater welke het signaal herhaalt.
 
 RS485 maakt standaard gebruik van half duplex. Hierbij zijn er twee draden nodig voor de communicatie en \'{e}\'{e}n draad voor de common ground. Full duplex is ook mogelijk met RS485, maar wij maken er in ons geval geen gebruik van.
 
 Het nadeel van het gebruik van half duplex is dat er niet tegelijk verzonden en geluisterd kan worden. Hierdoor moet er dus aan de kant van de kastjes gecontroleerd worden of er niet gezonden wordt voordat het kastje gaat zenden. Wanneer een kastje gaat zenden terwijl een ander kastje aan het zenden is zal de communcatie niet goed verlopen. Door gebruik te maken van een centrale master (De computer), die aangeeft wie er mag zenden kan dit probleem verholpen worden. Dit heeft wel als nadeel dat er meer data nodig is om over te sturen omdat de master toestemming moet geven om te sturen. Echter, op korte afstand is de bandbreedte van RS485 tot 10MB/s (Tot 10 meter, hierna zal de snelheid afnemen), terwijl de data welke wij sturen vrij minimaal is.
+
+In het schema hieronder is schematische te zien hoe de communcatie gaat vanuit de microcontroller naar de computer.
+
+\begin{center}
+  \figuur{scale=0.45}{plaatjes/scheme_rs485.png}{PNG}{RS485}
+\end{center}

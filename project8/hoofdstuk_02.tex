@@ -1,4 +1,4 @@
-\chapter{Het project}
+\hoofdstuk{Het project}
 Het doel van project 7 en 8 was om zelf te komen met een onderwerp wat jou interesant leek en wat uiteraard te maken had met TI. Hierbij was het ook de bedoeling dat het project inovatief was. De groepen mochten bij dit project zelf gekozen worden, met een maximum van drie.
 
 Wij hadden als onderwerp gekozen om een tentamen regisistratie systeem te maken, gebaseerd op de door het \emph{CBR} gebruikte systeem voor het afnemen van theorieexamens. Wij hadden hiervoor gekozen omdat wij vonden als opleiding welke ICT belangrijk vind, maar tentamens nog steeds analoog afneemt eigenlijk niet kan. Ons doel was om in eerste instantie een kastje te ontwerpen waarbij simpele multiple choise tentamens afgenomen konden worden. Met een latere uitbreiding hierbij zou het ook mogelijk zijn ander soort tentamens af te nemen, maar dit zat niet in het orginele ontwerp.
@@ -10,7 +10,7 @@ Het project zelf is primair verdeeld in twee onderdelen, te weten:
 \end{itemize}
 Beide onderdelen kunnen met elkaar communiceren via een RS485 bus. 
 
-\section{Antwoord kastje}
+\paragraaf{Antwoord kastje}
 Om het project ``simpel'' te houden hadden we besloten om in het kastje waarop de student een antwoord ingeeft zo stom mogelijk te laten zijn. Het enige wat dit kastje doet is het registreren van het ingegeven antwoord door de student en dit dan doorsturen naar de computer via de RS485 bus. Door op deze maier te werken kunnen we het kastje vrij simpel aanpassen zonder de ``slimigheid'' veel te moeten wijzigen. Wanneer er toch iets in de ``slimigheid'' gewijzigd moet worden hoeft dit maar \'{e}\'{e}n maal gewijzigd te worden en niet in alle kastjes los. Door op deze manier te werken konden we ook de hardware welke benodigd was voor de kastjes simpel houden wat qua budget beter werkten voor het project. 
 
 In het ontwerp van het kastje bevinden zich de volgende onderdelen:
@@ -23,27 +23,27 @@ In het ontwerp van het kastje bevinden zich de volgende onderdelen:
 \end{itemize}
 Ieder onderdeel zullen we hieronder kort bespreken.
 
-\subsection{Microprocessor}
+\subsection*{Microprocessor}
 De microprocessor is het hart van het kastje. Hij zorgt ervoor dat wanneer een student een antwoord invoert dit tijdelijk lokaal opgeslagen wordt en zodra er een vrije verbinding is dit verstuurd wordt naar de computer. Doordat de microcontroller zelf niet beschikt over een RS485 port moet er gebruik gemaakt worden van een apart IC. Zie hiervoor het onderdeel RS485 hieronder.
 
 De microcontroller krijgt door van de computer wanneer een gebruiker een antwoord mag invullen. Tevens krijgt het ook een bevestiging van de computer wanneer een antwoord opgeslagen is en weergeeft dit via een ledje weer.
 
-\subsection{Knoppen}
+\subsection*{Knoppen}
 De student kan door middel van de knoppen een antwoord geven op een vraag van van het tentamen. Door gebruik te maken van interupts kan de microcontroller eenvoudig constateren dat de student op een knop gedrukt heeft en hierna dit antwoord verwerken.
 
-\subsection{RS485}
+\subsection*{RS485}
 RS485 is het bus protocol wat wij gebruiken om de data van en naar de computer te sturen. Verder op in dit document staat een uitgebreideren uitleg over RS485. De microcontroller heeft geen standaard beschikking over een RS485 connectie, maar heeft wel een RS232 interface. Via deze RS232 kan met het gebruikte RS485 IC alsnog de communicatie opgebouwd worden. Dit IC handeld de complete communicatie af en stuurt de binnengekomen data door naar de microcontroller.
 
-\subsection{Voeding}
-\In ieder kastje is een eigen stabiele voeding ingebouwd. De kastjes worden voorzien van voeding over een RJ45 connector waarbij tevens ook de data wordt verstuurd naar de computer. Omdat deze voeding niet gestabliseerd is moet dit nog in het kastje gebeuren. In het kastje is enkel 5Volt nodig, en dit wordt dus ook gemaakt door een LM7805. Dit LM7805 kan een voeding tot 1Ampere verzorgen, bij een spanning tot 38Volt. Hierbij heeft hij minimaal 7 Volt nodig. Op de RJ45 connectie staat een voltage van 12 volt. Voor dit voltage is gekozen zodat er eventueel ook een hoger voltage gebruikt kan worden bij een later ontwerp. Doordat we gebruik maken van een relatief simpele LM, is het vermogen wat hij kan gebruiken niet zeer hoog. Echter, doordat er maar een minimaal aantal componenten in het kastje aanwezig zijn zullen wij bij lange na niet het maximum van de LM7805 gebruiken. 
+\subsection*{Voeding}
+In ieder kastje is een eigen stabiele voeding ingebouwd. De kastjes worden voorzien van voeding over een RJ45 connector waarbij tevens ook de data wordt verstuurd naar de computer. Omdat deze voeding niet gestabliseerd is moet dit nog in het kastje gebeuren. In het kastje is enkel 5Volt nodig, en dit wordt dus ook gemaakt door een LM7805. Dit LM7805 kan een voeding tot 1Ampere verzorgen, bij een spanning tot 38Volt. Hierbij heeft hij minimaal 7 Volt nodig. Op de RJ45 connectie staat een voltage van 12 volt. Voor dit voltage is gekozen zodat er eventueel ook een hoger voltage gebruikt kan worden bij een later ontwerp. Doordat we gebruik maken van een relatief simpele LM, is het vermogen wat hij kan gebruiken niet zeer hoog. Echter, doordat er maar een minimaal aantal componenten in het kastje aanwezig zijn zullen wij bij lange na niet het maximum van de LM7805 gebruiken. 
 
-\subsection{LEDs}
+\subsection*{LEDs}
 De LEDs hebben enkel als doel om te weergeven aan de student welk antwoord hij heeft ingevult. De LEDs hebben geen verdere functie.
 
-\subsection{Overige componenten}
+\subsection*{Overige componenten}
 Naast de hierboven genoemde ``belangerijkere'' onderdelen zitten er in het kastje ook nog een aantal andere componenten, zoals weerstanden en condensatoren. Deze zorgen ervoor dat het complete kastje goed en storingsvrij werkt. 
 
-\section{Computersoftware}
+\paragraaf{Computersoftware}
 De computersoftware is eigenlijk het belangerijkste deel van het project. Het bestaat kortweg uit twee delen:
 \begin{itemize}
   \item Vragen weergave
@@ -51,8 +51,20 @@ De computersoftware is eigenlijk het belangerijkste deel van het project. Het be
 \end{itemize}
 Beide delen worden kort hieronder uitgelegd.
 
-\subsection{Vragen weergave}
+\subsection*{Vragen weergave}
 Om de vragen te weergeven aan de studenten is er in java een programma geschreven welke fullscreen de vragen weergeeft met de bijbehorende meerkeuze antwoorden. Zodra  student antwoord via het keuzekastje zal de computer dit opslaan in de lokale database. De computer houd bij welke vraag door welke student is beantwoord met wat. Hij slaat dit op zodra hij door de communicatie binnen krijgt wat de gebruiker heeft ingevoerd. Dit gebeurd geheel op de achtergrond.
 
-\subsection{Communicatie}
+\subsection*{Communicatie}
 De computer maakt via de serie\"{e}le port en een MAX232 verbinding met de RS485 bus. Doordat de computer intern geen directe RS485 toegang heeft moet op deze manier de connectie gemaakt worden. De MAX232 IC zorgt ervoor dat de RS232 verbinding omgezet wordt naar TTL level en deze wordt daarna via het RS485 IC (Welke ook aanwezig zijn in de kastjes) omgezet voor gebruik op de RS485 bus.
+
+\paragraaf{Eindontwerpen}
+Voor het project is uitendelijk een schema en een PCB ontwerp gemaakt welke gebruikt is voor het einddoel. Deze staan hier beide onder. Dit schema is uiteindelijk wel gebruikt, maar we hebben enkel gebruik gemaakt van een breadboard, en de PCB dus niet gemaakt.
+
+\begin{center}
+  \figuur{scale=0.45,angle=270}{plaatjes/schema.png}{PNG}{Schema}
+\end{center}
+
+\begin{center}
+  \figuur{scale=0.45,angle=270}{plaatjes/pcb_ontwerp.png}{PNG}{PCB ontwerp}
+\end{center}
+

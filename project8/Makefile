@@ -1,5 +1,6 @@
 # Vars
-FILE=dictaat
+%FILE=dictaat
+FILE=verslag
 SCP=scp -i ../id_rsa_pdf 
 DEST=linux@hosthuis.nl:/var/www/linux/.
 
