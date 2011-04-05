@@ -1,0 +1,133 @@
+\documentclass[a4paper,11pt]{report}
+% Hier hebben we de preamble, alle document settings moeten hier:
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{appendix}
+\usepackage[titles]{tocloft}
+\usepackage[dutch]{babel}
+\usepackage[xindy,style=altlistgroup]{glossaries}
+\usepackage{listings}
+\usepackage{makeidx}
+\usepackage{fullpage}
+%\usepackage{hyperref}
+% Paragrafen hebben een witregel ertussen, en geen indent tab:
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+%% Woordenlijst moet aan het begin worden geinclude:
+%\loadglsentries{woordenlijst}
+% Onderstaande is voor de dots tussen chapter title + blz. 
+\makeatletter
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 1.0em \@plus\p@
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\normalfont\leaders\hbox{$\m@th
+        \mkern \@dotsep mu\hbox{.}\mkern \@dotsep
+        mu$}\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+      \penalty\@highpenalty
+    \endgroup
+  \fi}
+\makeatother
+
+% End of title + blz.
+% Table of content depth van 4, dus tm paragraph
+\setcounter{tocdepth}{4}
+%\renewcommand{\baselinestretch}{1.5} 1.5 regelafstand 
+
+%Pas listings aan zodat ze duidelijker zijn
+\lstset{ %
+  language=bash,                % choose the language of the code
+  basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=lr,	                % adds left and right lines
+  tabsize=2,	                % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+%  escapeinside={\%*}{*)},         % if you want to add a comment within your code
+  morekeywords={*,...}            % if you want to add more keywords to the set
+}
+\makeindex
+
+% Einde preamble, begin document:
+\begin{document}
+% Front page:
+\title{
+  Programma Proefstuderen
+}
+\author{
+%  Sebastiaan Polderman\\
+%  0820738\\
+%  \and
+  Paul Sohier\\
+  0806122
+}
+\date{\today}
+\maketitle
+% Abstract. Heel kort wat het is:
+%\begin{abstract}\centering
+%Samenvatting
+%\end{abstract}
+
+% Nu een voorwoordje
+%\chapter{Voorwoord}
+%Hier een prachtig voorwoord. 
+
+% De table of contents:
+%\tableofcontents
+
+% Inleiding doen we ook nog in de master file:
+%\chapter{Inleiding}
+%Inleiding van het dictaat. Blablabla natuurlijk. 
+% Einde inleiding
+
+% Nu kunnen we de losse hoofdstukken gaan includen. 
+% Includen gebeurt met basename, dus zonder .tex
+%\include{hoofdstuk01}
+%\include{hoofdstuk02}
+%\include{hoofdstuk03}
+%\include{hoofdstuk04}
+
+% Include van de biblio file, ook in de toc:
+%\addcontentsline{toc}{chapter}{\numberline{}Bibliografie}
+%\include{biblio}
+% Verklarende woordenlijst + toc:
+%\addcontentsline{toc}{chapter}{\numberline{}Verklarende Woordenlijst}
+%\printglossaries
+
+% Appendix:
+%\appendix
+%\include{appendix01}
+
+%\addcontentsline{toc}{chapter}{Index}
+%\printindex
+
+\chapter{Programma}
+We hebben niet direct vasten tijden voor ieder programma onderdeel. Afhankelijk van de groep en de hoeveelheid tijd die hun eraan willen besteden passen we het programma aan. Wel hebben we de onderstaande onderwerp altijd in het programma zitten.
+\begin{itemize}
+  \item[Curiculem uitleg] Hier wordt (Vaak door een gevraagde docent, maar de begeleidend studenten kunnen het ook) uitgelegd wat de opleiding precies inhoud en welke vakken ze krijgen. Hierbij worden ook kort de boeken welke gebruikt worden bij de opleiding behandeld zodat de studenten kunnen inzien wat ze te wachten staat. 
+
+    Deze uitleg wordt in principe 's ochtends gegeven, als begin van de dag. 
+  \item[Rondleiding] Om te laten zien hoe het gebouw er uitziet doen we in principe na het programma uitleg een korte rondleiding door het gebouw waar we alle belangrijke plekken in het gebouw laten zien. Deze rondleiding duurt niet heel lang, maar laat wel het belangrijkste delen van het gebouw zien.
+  \item[Les] Er wordt door \'{e}\'{e}n van de begleidende studenten een basis les gegeven over Java. Deze les is gebaseerd op de lesstof van Wessel, maar zo aangepast dat er wat theorie mist wat Wessel wel geeft, maar wat niet direct nodig is om een basis te hebben bij het programmaren. Er wordt gebruik gemaakt van Netbeans als editor, en niet van emacs. Halverwege de les krijgen de studenten een opdracht om zelf, naar voorbeeld vanuit de presentatie, een eerste ``Hello World'' programma te schrijven. Aan het eind van de les krijgen ze de opdracht, om met behulp van de kennis uit de les, een simpele rekenmachine te maken. 
+
+    In principe wordt deze Les 's ochtends gegeven, en duurt ongeveer 1.5 uur. Het doel van de les is om een indruk te krijgen wat ze kunnen verwachten bij programmeren.
+  \item[Project] Hierbij gaan ze werken met Lego. Er is niet een speciefieke opdracht welke ze moeten maken, de studenten moeten zelf met iets komen waarvan hun denken dat geschikt zou zijn bij TI. Hierbij kan gedacht worden aan een robot, of bijvoorbeeld een vechtmachine. Er zijn ook wel eens studenten welke een koffie robot gemaakt hebben om Koffie naar Adrie te brengen. 
+
+    In principe wordt deze les 's middags gegeven, en duurt vanaf de lunch tot het eind. Het doel van de les is om een indruk te krijgen wat een project inhoud, maar ook om deels zelfstandig wat te kunnen doen en te samenwerken met mogelijk toekomstige studenten. De begleindende studenten helpen in principe enkel wanneer ze een vraag/probleem hebben. 
+\end{itemize}
+
+% Einde document
+\end{document}
