@@ -1,0 +1,29 @@
+\select@language {dutch}
+\contentsline {chapter}{\numberline {1}Voorwoord}{1}
+\contentsline {chapter}{\numberline {2}Inleiding}{4}
+\contentsline {chapter}{\numberline {3}De effici\"{e}ntie van programmatuur}{5}
+\contentsline {section}{\numberline {3.1}Opgave 1}{5}
+\contentsline {section}{\numberline {3.2}Opdracht 2}{5}
+\contentsline {section}{\numberline {3.3}Opdracht 3}{5}
+\contentsline {section}{\numberline {3.4}Opdracht 4}{6}
+\contentsline {section}{\numberline {3.5}Opdracht 7}{6}
+\contentsline {chapter}{\numberline {4}Recursie}{7}
+\contentsline {section}{\numberline {4.1}Opdracht 1}{7}
+\contentsline {section}{\numberline {4.2}Opdracht 2}{7}
+\contentsline {section}{\numberline {4.3}Opdracht 3}{7}
+\contentsline {section}{\numberline {4.4}Opdracht 4}{7}
+\contentsline {section}{\numberline {4.5}Opdracht 5}{8}
+\contentsline {section}{\numberline {4.6}Opdracht 7}{8}
+\contentsline {section}{\numberline {4.7}Opdracht 11}{8}
+\contentsline {chapter}{\numberline {5}De grafentheorie}{9}
+\contentsline {section}{\numberline {5.1}opgave 1}{9}
+\contentsline {section}{\numberline {5.2}Opgave 2}{9}
+\contentsline {section}{\numberline {5.3}Opgave 3}{9}
+\contentsline {section}{\numberline {5.4}Opdracht 6}{9}
+\contentsline {section}{\numberline {5.5}Opdracht 7}{9}
+\contentsline {section}{\numberline {5.6}Opdracht 9}{10}
+\contentsline {chapter}{\numberline {6}Graafalgoritmen}{11}
+\contentsline {section}{\numberline {6.1}Opdracht 1}{11}
+\contentsline {chapter}{\hbox to\@tempdima {\hfil }Bibliografie}{12}
+\contentsline {chapter}{\numberline {A}Deel 1}{13}
+\contentsline {chapter}{\hbox to\@tempdima {\hfil }Verklarende Woordenlijst}{13}

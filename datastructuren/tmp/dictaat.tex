@@ -78,20 +78,20 @@
 \date{\today}
 \maketitle
 % Abstract. Heel kort wat het is:
-%\begin{abstract}\centering
-%Samenvatting
-%\end{abstract}
+\begin{abstract}\centering
+Samenvatting
+\end{abstract}
 
 % Nu een voorwoordje
-%\chapter{Voorwoord}
-%Hier een prachtig voorwoord. 
+\chapter{Voorwoord}
+Hier een prachtig voorwoord. 
 
 % De table of contents:
 \tableofcontents
 
 % Inleiding doen we ook nog in de master file:
-%\chapter{Inleiding}
-%Inleiding van het dictaat. Blablabla natuurlijk. 
+\chapter{Inleiding}
+Inleiding van het dictaat. Blablabla natuurlijk. 
 % Einde inleiding
 
 % Nu kunnen we de losse hoofdstukken gaan includen. 
@@ -102,18 +102,18 @@
 \include{hoofdstuk04}
 
 % Include van de biblio file, ook in de toc:
-%\addcontentsline{toc}{chapter}{\numberline{}Bibliografie}
-%\include{biblio}
+\addcontentsline{toc}{chapter}{\numberline{}Bibliografie}
+\include{biblio}
 % Verklarende woordenlijst + toc:
-%\addcontentsline{toc}{chapter}{\numberline{}Verklarende Woordenlijst}
+\addcontentsline{toc}{chapter}{\numberline{}Verklarende Woordenlijst}
 %\printglossaries
 
 % Appendix:
-%\appendix
-%\include{appendix01}
+\appendix
+\include{appendix01}
 
-%\addcontentsline{toc}{chapter}{Index}
-%\printindex
+\addcontentsline{toc}{chapter}{Index}
+\printindex
 
 % Einde document
 \end{document}
