@@ -1,0 +1,118 @@
+\hoofdstuk{Projectdoel}
+Het doel van dit project was tot het maken van een compleet kassa systeem waarbij de huidige manier van werken achter de bar bij de sportvereniging vervangen werd door een systeem er voor zorgden dat de vrijwilligers minder werk moeten te doen om de bar draaiende te houden. 
+\paragraaf{Huidige manier van werken}
+Op het moment wordt er achter de bar eigenlijk compleet niet bijgehouden wat er verkocht wordt totaal en wat de omzet is. Het vorige bestuur achten het niet nodig om dit bij te houden, maar met een nieuw bestuur vinden ze dit wel belangerijk. Maar op het moment is er eigenlijk compleet geen mogelijkheid om dit op een fatsoenlijke manier te doen, dus willen ze in principe de complete analoge manier van werken dit op dit moment gebruikt wordt vervangen door een alles in \'{e}\'{e}n systeem welke zelf een hoop werk uit handen neemt. Hier komt dan ook het KI deel bij kijken, hierover later meer.
+\paragraaf{Kassa}
+Achter de bar is een kassa aanwezig, maar deze wordt in het geheel niet gebruikt als kassa. Het enige waar deze kassa voor gebruikt wordt is het bewaren van het geld. Er wordt niet aangeslagen wat er in gaat of welke producten verkocht zijn. Er is dus ook totaal geen controle op de inkomsten van de bar, en er kan niet gecontroleerd worden of de inhoud van de kassa klopt met hetgeen verkocht is. Zolang de inkoop met de verkoop ongeveer klopt is dit uiteraard geen probleem, maar zodra er hier ergens iets scheef gaat zitten heb je toch echt een probleem, doordat je niet kan controleren waar het fout is gegaan en of dit structureel is.
+
+\paragraaf{Bonnen}
+Binnen de kantine wordt er met een systeem gewerkt waarbij je in principe alles op een bon koopt, welke je op het eind van de avond betaald (Of, wanneer de bezoeker geen geld bij zich heeft of de bar niet kan wisselen, of een andere redenen, in het boek schrijft en de volgende keer betaald). Op deze manier worden er niet allerlei kleine betalingen gedaan door iedereen, waardoor je snel door klein geld heen bent.
+
+Op het moment worden deze bonnen op een los A4tje opgeschreven, waarbij boven iedere bon de naam van de bezoeker staat. Op deze manier werken heeft een aantal grote nadelen, namelijk:
+\begin{itemize}
+        \item Er zijn met regelmaat mensen met dezelfde naam aanwezig in de zaal welke dan op de bon ook onder dezelfde naam worden opgeschreven, doordat er te weinig ruimte is om de achternaam er naast te schrijven. Doordat er in veel gevallen meerdere personen tegelijk achter de bar staan kan dit verwarring opleveren en kunnen er producten op de bon van de verkeerde persoon komen te staan. 
+        \item Het gebeurd met regelmaat dat een bon verkeerd doorgestreept wordt als zijnde betaald terwijl een andere bon bedoeld was waardoor er fouten bonnen in het boek aan het eind van de avond worden geschreven.
+        \item Regelmatig vergeten zaalwachten om op te schrijven wie iets gekocht heeft waardoor de bonnen niet meer kloppen.
+        \item Al deze punten bij elkaar zorgen ervoor dat er een zeer grote kans op fouten is, en er totaal geen overzicht is voor het bestuur wat er verkocht is.
+\end{itemize}
+
+\paragraaf{Boek}
+De bonnen die op de avond gebruikt worden en het boek zijn erg met elkaar verbonden. Wanneer een bezoeker zijn bon niet betaald, om wat voor reden dan ook, komt hij in het boek te staan. Bij zijn volgende bezoek is het dan de bedoeling dat hij de rekening welke in het boek staat betaald.
+
+Het boek is op dit moment daadwerkelijk een boek waarin staat wie nog hoeveel moet betalen en op welke datum dit in het boek is gezet. Er is voor, buiten de personen welke aanwezig zijn in de zaal, geen overzicht wie er in het boek staan en voor wat voor bedrag. Er is dus voor het bestuur in principe ook geen overzicht over hoeveel geld er nog binnen moet komen van al verkochten producten.
+
+Naast het probleem van het overzicht gebeurd het ook met regelmaat dat iemand iets uit het boek gewoonweg niet kan lezen of dat er een enkel een voornaam in het boek staat waardoor niet iedereen weet wie er bedoeld is. 
+
+\paragraaf{Vooraad}
+Momenteel wordt er niet bijgehouden wat voor vooraad er aanwezig is in het gebouw. Zodra er een product op is wordt het besteld en is het dus goed mogelijk dat dit product een tijd niet verkocht kan worden. Maar ook andersom is het goed mogelijk, het gebeurd met regelmaat dat er niet volgens bijvoorbeeld het FIFI\footnote{First in first out} systeem gewerkt wordt, of dat een product niet vaak verkocht wordt, waardoor producten over de maximale houdbaarheids datum zijn en dus niet meer verkocht mogen worden. Op dit moment heb je dus voor het product wel betaald, maar kan je het niet verkopen en kost het dus geld.
+
+\paragraaf{Eisen aan het nieuwe systeem}
+Aan het nieuwe systeem zitten een aantal eisen waar het geheel aan moet voldoen om daadwerkelijk gebruikt te kunnen gaan worden binnen de kantine. Een aantal zijn eisen gebaseerd op de hierboven beschreven problemen en een aantal eisen hebben te maken met de algemene werking van het system.
+
+Alle eisen waar het systeem in principe moet voldoen staan hieronder beschreven:
+\begin{itemize}
+        \item Algemeen gebruik: 
+        \begin{itemize}
+        \item Software moet simpel te bedienen zijn, en niet ingewikkeld in gebruik (Wat betekend dat zowel oudere jeugd als de veteranen ermee moeten kunnen werken)
+        \item Software moet te bedienen zijn via een touchscreen
+        \item Software moet draaien op een Windows PC welke al aanwezig is in de zaal
+        \item Software moet stabiel draaien
+        \item Toegang tot de software beperkt via een RFID inlog systeem, waarbij iedere barwacht een uniek eigen pasje heeft waarmee hij zich aanmeld, en aan de hand van dit pasje de rechten van de gebruiker bepaald wordt
+        \end{itemize}
+        \item Werking:
+        \begin{itemize}%werking begin
+        \item Vooraad:
+        \begin{itemize}%vooraad begin
+        \item Automatische afboeking van producten zodra deze verkocht worden bij zowel losse verkoop (Zonder bon) en via een bon
+        \item Automatische bestelling zodra een product op een bepaalde waarde is bij de leverancier via email
+        \item Terugkoppeling naar de vrijwilligers welke de vooraad beheren over wat er besteld is
+        \item Herhalende emails naar vrijwilligers als producten welke besteld zijn maar niet binnen gekomen zijn 
+        \item Simpel aanpassen van de vooraad bij het binnen komen van nieuwe producten
+        \end{itemize}%vooraad end
+        \item Kassa: 
+        \begin{itemize}%kassa begin
+        \item Overzicht van hoeveel er die avond verkocht is en wat de inhoud van de kassa is
+        \item Simpel afrekenen van lossen producten en bon en boek items
+        \item Controle of gekozen product aanwezig is in vooraad voordat het afgerekend kan worden. Indien het niet aanwezig is moet er een foutmelding gegeven worden
+        \item Mogelijkheid tot verwijderen van item bij losse verkoop
+        \item Mogelijkheid tot eenvoudig toevoegen van meerdere dezelfde producten
+        \end{itemize}%kassa end
+        \item Bonnen:
+        \begin{itemize}%bonnen begin
+        \item Eenvoudig toevoegen van nieuwe bonnen
+        \item Controle of gekozen product aanwezig is in vooraad voordat het kan toegevoegd worden. Indien het niet aanwezig is moet er een foutmelding gegeven worden
+        \item Controle of de naam bij het aanmaken van de bon niet al aanwezig is
+        \item Toevoegen van producten aan een bon via dezelfde manier en zelfde scherm als losse verkoop
+        \item Bon moet eenvoudig om te zetten zijn naar een boek item
+        \item Bon moet eenvoudig af te rekenen zijn
+        \end{itemize}%bonnen end
+        \item Boek:
+        \begin{itemize}%boek begin
+        \item Boek item moet eenvoudig af te rekenen zijn
+        \item Er moet een overzicht zijn welke items open staan
+        
+        \end{itemize}%boek end
+        \end{itemize}%werking end
+        
+        \item Beheer:
+        \begin{itemize}
+        \item Mogelijkheid tot eenvoudig toevoegen van nieuwe producten
+        \item Mogelijkheid tot beheer van bestaande producten in de vorm van aanpasbaarheid van prijs en aanwezige hoeveelheid
+        \item Overzicht van producten welke besteld zijn en welke binnenkort besteld zullen moeten worden
+        \item Overzicht van mensen welke in het boek staan en voor hoelang
+        \item Mogelijkheid tot versturen van aanmaningen van mensen welke te lang in het boek staan, eventueel automatische
+        \item Alle mogelijkheden hierboven moeten bereikbaar zijn vanuit buiten de zaal
+        \end{itemize}
+\end{itemize}
+Het is in principe de bedoeling dat er in de computer op de bar de ``hoofd'' client draait welke alles bijhoudt en waar alle data daadwerkelijk is opgeslagen. Om er voor te zorgen dat er buiten de zaal beheerd kan worden kunnne ``sub'' clients connectie maken met de ``hoofd'' client welke de gebruiker de data dan op afstand laat aanpassen.
+
+\hoofdstuk{Software}
+Bij het ontwikkelen van de software is er rekening mee gehouden met de bovenstaande eisen welke er gesteld zijn vanuit het bestuur en de overige zaalwachten. Door samen te werken met het bestuur tijdens de ontwikkeling kon er hierbij tijdens de ontwikkeling al bepaalde dingen aangepast worden en is een tweetal keer besloten om een bepaalde eis iets anders aan te pakken of compleet te laten vervallen. Door veel samen te werken met het bestuur kon de basis versie van het eindproduct snel gemaakt worden, en zal eind deze maand een eerste versie, welke nog niet aan alle eisen voldoet, zoals bijvoorbeeld de toegangscontrole en beheer op afstand, in gebruik genomen worden. In de komende maanden zullen de verdere eisen aan het systeem toegevoegd worden en zal in overleg met de overige zaalwachten gekeken worden welke wijzingen nog gedaan moeten worden aan het systeem.
+
+Hieronder zal er per scherm besproken worden wat het scherm doet en hoe het gebruikt wordt binnen het systeem.
+
+\paragraaf{Hoofdscherm}
+Wanneer de kassa geopend wordt komt het scherm zoals in figuur \ref{fig:hoofd} in beeld. In dit scherm is de mogelijkheid tot losse verkoop (De button Rechts ``op bon'' is niet actief) of tot het toevoegen van een product op bon (De button ``op bon'' is actief en een bon is daarnaast geselecteerd). Door het specifieke product aan te klikken (Of in het normale gebruik aan te raken via het touchscreen) wordt het toegevoegd. Wanneer er meerdere dezelfde producten tegelijk toegevoegd moet worden kan dit aangegeven worden via het invulveld aantal.
+
+Links bovenaan staat, wanneer de losse verkoop modes is ingeschakeld hoeveel de huidige rekening van die specifieke verkoop is. Door op de betaal knop te drukken wordt de losse verkoop betaald, wordt de omzet toegevoegd aan de omzet teller (Ernaast). Wanneer er op bon gewerkt wordt is de teller links boven niet in gebruik
+\figuur{width=\columnwidth}{plaatjes/hoofdscherm.png}{hoofd}{Hoofdscherm}
+
+\paragraaf{Bonnenscherm}
+In figuur \ref{fig:bonnen} is te zien hoe het scherm voor het aanmaken en beheren van bonnen eruitziet. Vanuit dit scherm kan een nieuwe bon aangemaakt worden, een bon verwijderd worden, of wanneer een specieke bon bekeken wordt deze betalen en een item ervanaf verwijderen.
+
+Wanneer een bon wordt geselecteerd (Door hem in de lijst aan te klikken en op Open te klikken), komt er een scherm met wat er in de bon staat rechts op het scherm.
+\figuur{width=\columnwidth}{plaatjes/bon.png}{bonnen}{Bonnenscherm}
+
+\paragraaf{Beheerscherm}
+Onder het beheer scherm staan alle producten vermelde welke verkocht worden, met hierbij hun prijs en de huidige vooraad. Hier kunnen beheerders tevens ook nieuwe producten toevoegen en bestaande producten eenvoudig aanpassen.
+
+\paragraaf{Logs}
+Onder logs wordt er precies bijgehouden welke actie door wie is uitgevoerd zodat er gecontroleerd kan worden of er geen fouten gemaakt zijn door de zaaldienst. Dit is een eenvoudige lijst, waar verder niks aan veranderd kan worden.
+
+
+\hoofdstuk{Verbeteringen en conclusies}
+In de huidige status moet er nog een hoop verbeterd worden aan de software om  alle eisen welke gesteld zijn vanuit het bestuur en nog niet verwerkt in de huidige versie van de software. Basis functionaliteit zit al wel in de software en de software kan dus binnenkort gebruikt gaan worden in de zaal. Wat hierbij vooral belangerijk zal zijn is het leren werken van de huidige zaalwachten met het nieuwe systeem zodat ze weten hoe het werkt en hoe ze ermee om moeten gaan. Doordat het eigenlijk een compleet ander systeem is als het oude systeem zullen veel zaalwachten in eerste instantie last hebben om met het systeem te werken waardoor er problemen zullen onstaan, echter door in het begin gelijk te leren hoe ze goed met het systeem om moet gaan kunnen hier een hoop problemen mee voorkomen worden.
+
+Wat vooral belangerijk zal zijn in de weken na de ingebruik name van het gehele systeem is de communcatie tussen het bestuur, de zaalwachten en ik als maker van het systeem ter controle of er geen problemen zijn met de werking van het systeem en welke punten er verbeterd moeten worden aan het systeem zelf. Op deze manier zijn alle betrokken personen verantwoordelijk voor problemen in de software en kunnen problemen welke gevonden worden snel opgelost worden, doordat iedereen veel met elkaar communiceert. 
+
+In de weken na het in gebruik nemen van het systeem zal er, in overleg met het bestuur wanneer het systeem niet in gebruik is, geupdate worden met de laatste aanpassingen van de software welke problemen oplost welke gevonden zijn en eisen welke in eerste instantie nog niet ingebouwd zijn alsnog toegevoegd. Wanneer er een software update wordt gedaan moet dit uiteraard vooraf getest worden voordat het in de productie omgeving in gebruik wordt genomen.         
