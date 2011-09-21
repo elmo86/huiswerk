@@ -1,0 +1,66 @@
+% Presentatie Project 7 (tussentijds)
+\documentclass{beamer}
+
+\mode<presentation>
+
+\usepackage[dutch]{babel}
+%\usepackage{beamerthemesplit}
+\usetheme{Berlin}
+\useinnertheme{rounded}
+\usecolortheme{rose}
+\setbeamertemplate{navigation symbols}{} 
+
+\title{Hogeschool Rotterdam}
+\author{Paul Sohier \and\\Tristan Hakkaart}
+\date{\today}
+
+\begin{document}
+
+\frame{
+  \titlepage
+} 
+
+\frame{
+  \frametitle{Inhoud}
+  \tableofcontents
+}
+
+ \section{De opdracht}
+ \frame{
+   \frametitle{De opdracht}
+   \begin{itemize}
+    \item<1-> Verbeteren van informatie voorziening
+    \item<2-> Momenteel niets voor geregeld
+    \item<3-> Problemen met de Privacy
+   \end{itemize}
+ }
+
+\section{Oplossing}
+\frame{
+  \frametitle{Oplossing}
+  \begin{itemize}
+    \item<1-> Software welke gegevens kan interpreteren
+    \item<2-> Gegevens uit diverse bronnen (Gemeente, personen zelf)
+    \item<3-> Gegevens worden pas opgehaald bij melding
+    \item<4-> Gegevens worden niet lokaal opgeslagen, alleen geprint bij melding
+  \end{itemize}
+}
+
+\frame{
+  \frametitle{Input/Output}
+  \begin{itemize}
+    \item<1-> Input: postcode, huisnummer, omvang incident
+    \item<2-> Output: Alleen relevante gegevens, geen gegevens die namen met iets anders kunnen koppelen
+    \item<2-> geslacht, fysieke conditie (Indien relevant), mentale conditie (Indien relevant)
+  \end{itemize}
+}
+
+
+
+\section{Afsluiting}
+\frame{
+  \frametitle{Afsluiting}
+  Zijn er nog vragen?
+}
+
+\end{document}
