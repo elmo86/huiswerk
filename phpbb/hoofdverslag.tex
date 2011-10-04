@@ -13,9 +13,100 @@ if (true == 1)
 \end{verbatim}
 Dit betekend alleen wel, wanneer je wel een type stricte vergelijking wilt uitvoeren, je hierbij in je statements rekening mee moet houden. In het geval van de bug inphpBB 2.0.13 moest er een type strict statement uitgevoerd worden, maar dit werd niet gedaan. Dit soort problemen zijn in php een stuk lastiger te vinden zodra ze eenmaal aanwezig zijn. Ook hacker hebben er ruim 2 jaar over gedaan om dit probleem in de source code te vinden. phpBB heeft met de release van 2.0.13 snel gereageerd om het probleem op te lossen, phpBB 2.0.12 was 6 dagen eerder released, maar het probleem was toen nog niet bekend.
 
+Naast de bovenstaande problemen zijn er ook in een aantal versies XSS gevonden en opgelost. Deze problemen kwamen deels doordat het was toegestaan om HTML te gebruiken in berichten op het forum. De HTML werd wel gefilterd, maar er zaten diverse bugs in deze filtering wat voor problemen zorgde.
+
 Naast de diverse problemen in phpBB zelf heeft de site van phpBB zelf ook diverse malen last gehad om zelf gehacked te worden. Door de intern gebruikte software niet up to date te houden is het diverse malen gebeurd dat de complete server van phpBB gehacked was en alle interne fora op torrent netwerken te vinden waren. Ook om dit in het vervolg te voorkomen zijn er intern een aantal verbeteringen doorgevoerd zodat dit niet meer gebeurd.
 
 \hoofdstuk{De verbeteringen}
-Om het imago te verbeteren van phpBB werd er besloten om in phpBB 2.2 (Welke later phpBB 3.0 werd\cite{bib.phpbb.2word3}) de aandacht te leggen op security. In phpBB2 zijn een groot aantal maatregelen genomen om de security te verbeteren zonder inbreuk te doen op de werking van de software. De belangrijkste maatregel hierin was het strict regelen van de manier waarop phpBB geschreven is. Dit is vastgelegd in een document en alle code voor phpBB moet voldoen aan deze richtlijnen. Een belangrijk deel hierbij was dat user input, wat in veel gevallen zorgden voor security problemen, op een vast manier afgehandeld wordt.
+Om het imago te verbeteren van phpBB werd er besloten om in phpBB 2.2 (Welke later phpBB 3.0 werd\cite{bib.phpbb.2word3}) de aandacht te leggen op security. In phpBB2 zijn een groot aantal maatregelen genomen om de security te verbeteren zonder inbreuk te doen op de werking van de software. De belangrijkste maatregel hierin was het strict regelen van de manier waarop phpBB geschreven is. Dit is vastgelegd in een document\cite{bib.phpbb.codingguidelines} en alle code voor phpBB moet voldoen aan deze richtlijnen. Een belangrijk deel hierbij was dat user input, wat in veel gevallen zorgden voor security problemen, op een vast manier afgehandeld wordt.
 
-           
+\paragraaf{Voorkomen van SQL Injection}
+SQL injection is niet alleen in phpBB, maar in veel websites een groot probleem. Veel ontwikkelaars letten bij de ontwikkeling van een website niet op de security van de website. Dit zorgt ervoor dat veel websites vatbaar zijn voor een groot aantal security problemen.
+
+Bij SQL injection is het mogelijk voor een persoon om queries uit te voeren terwijl dit uiteraard niet toegestaan is. In sommige gevallen betekend dit dat een gebruiker alleen data kan lezen, zoals bijvoorbeeld wachtwoorden, in andere gevallen betekend dit dat een gebruiker ook daadwerkelijk data kan aanpassen welke in de database staan. Het is dus belangrijk om te voorkomen dat er SQL injection aanwezig is in een site.
+
+Een veelgebruikte oplossing tot het voorkomen van SQL Injection is het gebruik van zogenaamde ``prepared statements''. Hierbij wordt de variable (Welke in veel gevallen user input is) niet direct in de Query opgenomen, maar wordt op die plek een vraagteken opgenomen. De SQL parser (Bijvoorbeeld PDO of een eigen ontwikkelde parser) zal de data welke opgegeven wordt op dit moment automatische escapen, afhankelijk van het type van de string.
+
+In listing \ref{zonder} staat een voorbeeld van hoe het duidelijk niet moet. Hier komt de user input direct in de query te staan en kan de gebruiker dus zelf queries uitvoeren welke hij wilt\footnote{Doordat er in php nog een aantal instellingen zijn die bepaalde data escapen, kan je niet altijd daadwerkelijk alles uitvoeren, echter staat deze instelling in de recente versies van php standaard uit\cite{bib.php.magic} en is de functionaliteit deprecated. De reden hiervoor is dat de php ontwikelaars van mening zijn dat het niet hun taak is het werk van de webontwikkelaar te doen. Magic quotes gaf in sommige gevallen ook rare effecten op de waarde die je krijg uit user input.}. In listing \ref{zonder.voorbeeld} staat een voorbeeld van hoe dit daadwerkelijk misbruikt kan worden. In dit voorbeeld zal in principe iedere gebruiker worden opgehaald welke in de tabel staat, en afhankelijk van de code hierna bepaald wat er daadwerkelijk gebeurd.
+\begin{lstlisting}[language=php,label=zonder,caption=Zonder escaping, veel gebruikt]
+$input = $_GET['id'];
+$sql = 'SELECT * FROM users WHERE user = ' . $input;
+$result = mysql_query($sql);
+\end{lstlisting}
+\begin{lstlisting}[label=zonder.voorbeeld,caption=Voorbeeld van misbruiken van niet gescapede data]
+http://www.example.org/index.php?id=user OR 1 = 1
+\end{lstlisting}
+Om listing \ref{zonder} ``beveiligd'' te krijgen moet de data uit het \texttt{\$\_GET} request escaped worden met bijvoorbeeld \texttt{mysql\_real\_escape\_string}. 
+
+Een betere manier om data te escapen is het gebruik van prepared statements. In listing \ref{prep} en \ref{prep2} staat een voorbeeld van hoe prepared statements werken met PDO. 
+\begin{lstlisting}[label=prep,caption=Prepared statements in PHP\cite{bib.php.prep}]
+$stmt = $dbh->prepare("INSERT INTO REGISTRY (name, value) VALUES (:name, :value)");
+$stmt->bindParam(':name', $name);
+$stmt->bindParam(':value', $value);
+\end{lstlisting}
+\begin{lstlisting}[label=prep2,caption=Prepared statements in PHP\cite{bib.php.prep}]
+$stmt = $dbh->prepare("INSERT INTO REGISTRY (name, value) VALUES (?, ?)");
+$stmt->bindParam(1, $name);
+$stmt->bindParam(2, $value);
+\end{lstlisting}
+In listing \ref{prep} worden de parameters op naam assigned in de query, terwijl in listing \ref{prep2} dit op ``count'' gedaan wordt van het parameter nummer. Het voorbeeld van het gebruiken van de naam is dat wanneer je de query aanpast en een extra veld toevoegd je nog steeds het goede veld assigned.
+Doordat PDO intern de data escaped zal bij consequent gebruik van prepared statements SQL injection niet mogelijk zijn.
+
+phpBB heeft besloten om geen gebruik te maken van prepared statements. De meest belangrijke reden hiervoor was dat de huidige phpBB versie werd ontwikkeld het gebruik van prepared statements nog niet erg ingeburged was. Een ander probleem was dat PDO niet (goed) werkt onder PHP4 wat nog een minimum eis was van phpBB. Doordat PDO  uitgebreid getest en bewezen is kan je daarover zeggen dat het correct werkt en dus veilig is. Wanneer je zelf een SQL parser gaat maken voor prepared statements kan je niet met deze hoge zekerheid zeggen dat het correct werkt. 
+
+phpBB heeft om deze reden besloten om gebruik te maken van escaping per specifieke variable en op type. In PHP bestaan er geen types zoals in JAVA waardoor in iedere variable ieder type kan zijn en ook van type kan wijzigen. phpBB heeft intern besloten dat ze dit niet willen en eisen type specifieke variablen voor alles. Hierdoor voorkom je al problemen waardoor een integer verwacht wordt terwijl een string opgegeven wordt en in de query geen single quotes worden gebruikt om aan te geven dat het een string is\footnote{Uiteraard wordt dit probleem als het goed is al afgevangen door de correct escaping van de data, in het geval van een integer door het aanroepen van \texttt{intval} over de variable.}.
+
+Om te zorgen dat alle data type strict wordt afgehandeld is er een simpele interface ontwikkeld om data op te vragen welke user input is (Ofwel, data uit voornamelijk formulieren en data uit de \texttt{QUERY\_STRING}). Deze interface bestaat uit een simpele methode welke minimaal 2 parameters verwacht. De eerste parameter is de naam van het veld welke opgevraagd moet worden. De tweede parameter is de default waarde welke teruggegeven wordt in het geval de variable niet bestaat in \textttP{\$\_REQUEST}\footnote{\texttt{\$\_REQUEST} is een samenvoeging van \texttt{\$\_POST} en \texttt{\$\_GET} welke samen alle data bevatten die verstuurd zijn door de gebruiker}. Om de type strictness te doen wordt, indien de waarde bestaat, gecast naar het type van de default. In listing \ref{request_var} staat een voorbeeld van hoe dit werkt. In listing \ref{request_var2} staat de uitkomt van deze methode. Het is binnen phpBB niet toegestaan om user input op een andere manier als via \texttt{request\_var} op te vragen\footnote{Voor phpBB versie 3.0, de huidige stable versie, is dit geregeld via de coding guidelines. Voor de volgende major release is het zelfs uitgeschakeld om user input op een andere manier op te vragen als via de dan nieuwe request class.}.  
+\begin{lstlisting}[label=request_var,caption=Voorbeeld van request\_var]
+var_dump(request_var('test', 1));
+var_dump(request_var('test', '1'));
+var_dump(request_var('test', 0.00));
+var_dump(request_var('test', array()));
+\end{lstlisting}
+\begin{lstlisting}[label=request_var2,caption=Uitkomt van request\_var]
+int(1)
+string(1) "1"
+float(0)
+array(0) {
+}
+\end{lstlisting}
+
+Het probleem van van SQL injection is hiermee nog steeds niet geheel opgelost. Alle data is op dit moment in principe wel type strict, maar strings moeten nog steeds correct escaped worden om ervoor te zorgen dat er niet uit de single quotes gebruikt kunnen worden. Om deze reden worden in SQL queries strings altijd escaped. Een query zal er in phpBB dus bijvoorbeeld uit kunnen zien zoals in listing \ref{query}. Hierbij zie je dat een string in een query altijd in single quotes staat, om aan te geven dat het een string is, terwijl een integer niet in single quotes staat. Doordat de integer al gecast is naar een int, door \texttt{request\_var} is het niet nodig om dit alsnog te doen, in sommige gevallen bijvoorbeeld wanneer de query in een aparte methode uitgevoerd wordt als waar de data opgehaald wordt, wordt dit alsnog escaped met \texttt{intval}. De string is nog niet escaped, dus wordt \texttt{\$db->sql\_escape} aangeroepen welke de data escaped. 
+\begin{lstlisting}[label=query,caption=Query uitvoeren in phpBB]
+<?php
+$user = request_var('user', '');
+$id = request_var('u', 0);
+
+$sql = 'SELECT user_ID FROM ' . USERS_TABLE .  ' WHERE username = \'' . $db->sql_escape($user) . '\' OR user_id = ' . $id;
+$result = $db->sql_query($sql);
+?>
+\end{lstlisting}%$
+Naast de hierboven genoemde methode heeft phpBB nog een aantal andere methode voor specifieke data, zoals bijvoorbeeld het invoegen van data in een table, welke zelf de escaping afhandelen afhankelijk van het type van de variable.
+
+Een hoop (hobby} web ontwikkelaars willen gebruik maken van centraal geregelde escaping welke alle user input die binnenkomt standaard escaped wordt. Hierbij wordt dus ook data welke bijvoorbeeld niet escaped hoeft te worden escaped, of wordt data op de verkeerde manier escaped. Het voordeel is wel dat alle data altijd escaped wordt, en je dus niet kan vergeten dat er data escaped moet worden. Magic quotes in PHP is ook op deze manier bedoeld, dat standaard alle data welke binnenkomt escaped wordt.
+
+\paragraaf{Voorkomen van XSS}
+XSS is het meest voorkomende security probleem wat er is. XSS staat voor Cross Side Scripting, wat kortweg betekend dat de eindgebruiker HTML kan invoeren op een manier welke niet is toegestaan. Dit wordt vaak veroorzaakt door bijvoorbeeld missende validatie of missende escaping van de HTML.
+
+In eerste instantie lijkt het wel mee te vallen dat je HTML kan invoegen in een document. Maar in veel gevallen kan hier misbruik door gepleegd worden, bijvoorbeeld in combinatie met SQL Injection of CSRF (Cross Site request forgery). Een voorbeeld hiervan is bijvoorbeeld het op de achtergrond door middel van javascript het opvragen van van een externe URL en daarop data uit te voeren.
+
+Een goed voorbeeld van het misbruik van XSS is een probleem in de website van gemeenten, wat digid kwetsbaar maakt\cite{bib.digid}.
+
+De belangrijkste wijziging ter voorkoming van XSS in phpBB3 is het verbieden van HTML in posts. Bij het gebruik van filtering is de kans op fouten in de filtering zeer groot, mede doordat HTML geen stricte taal is en veel toestaat. Hierdoor is het haast niet te filteren en onstaat bij het gebruik van filtering in veel gevallen problemen, zoals ook in phpBB2 het geval was. Hierdoor mist phpBB wel wat functionaliteit, maar de kans op XSS is hierintegen wel een stuk lager. De data moet uiteraard nog wel escaped worden, anders is XSS via user input alsnog mogelijk.
+
+phpBB heeft hierbij gekozen om alle user data welke binnenkomt via \texttt{request\_var} en een string is te escapen. De reden dat hiervoor gekozen is is dat bijna alle user input welke binnenkomt daadwerkelijk ook wordt weergeven aan de gebruiker. Op deze manier staat altijd alle data in de database al escaped, en hoeft er bij de weergave niet alsnog gecontroleerd te worden of er nog data escaped moet worden.
+
+\paragraaf{password hashing}
+In phpBB2 werd gebruikt gemaakt van MD5 als hashing mechanisme voor wachtwoord. Op het moment dat phpBB2 ontwikkeld werd was MD5 het defacto standaard voor hashing. In 2007 is echter ondekt dat het MD5 niet langer veilig is door een mogelijke collision\cite{bib.md5.col}. Dit houd kortweg in dat 2 strings (Of bestanden) dezelfde hash hebben, wat in theorie niet mogelijk hoort te zijn. Hierdoor is het gebruik van MD5 afgeraden door diverse instanties en heeft phpBB ook daadwerkelijk besloten om MD5 niet te gebruiken voor password hashing.
+
+phpBB heeft om deze reden besloten om gebruik te maken van phpass\cite{bib.phpass}. Een belangrijke eis was dat de hash functie altijd moet werken op de door phpBB ondersteunde systemen, welke lopen van PHP 4.3.3 tot PHP 5.3.8 (Op dit moment van schrijven), waarbij ook nog eens bepaalde extensies wel of niet ingeschakeld konden zijn. phpass\cite{bib.phpass.art}  maakt gebruik van de cryptografische libary van PHP zelf (Welke altijd beschikbaar is sinds PHP 5.3.0), en in het geval deze niet beschikbaar is een eigen implementatie van MD5 welke al sinds PHP3 beschikbaar is. Alle drie de ondersteunde hashing methode maken gebruiken van salt (Het toevoegen van een string welke rainbow tables niet onbruikbaar maken) en herhaalde hashing. phpBB maakt primair gebruik van de md5 fallback, aangezien die altijd beschikbaar is en hierdoor dus portable is naar andere servers\footnote{phpBB gebruikt een minimale versie van phpass, waaruit de niet portable hashes, ofwel alle opties welke \texttt{crypt} vereisen, niet bevat. De hashes gegenereerd door phpBB zijn compitable met phpass, maar niet alle hashes gemaakt door phpass zijn compitable met de versie van phpass in phpBB.}. 
+
+phpass gebruikt normaal gesproken in eerste instantie, en indien beschikbaar, blowfish als hashing methode. Indien deze niet beschikbaar is wordt er gebruik gemaakt van ext\_des, en pas als laatste wordt er gebruik gemaakt van de eigen md5 implementatie.
+
+Voor iedere hash die gemaakt wordt maakt phpass tevens een random salt. Hierbij wordt onder linux en unix gebruik gemaakt van \texttt{/dev/urandom}, en indien dit niet beschikbaar is wordt er gebruik gemaakt van een door phpBB eigen geschreven random generator. Deze eigen random generator is gebaseerd op microtime, en is dus niet daadwerkelijk echt random. 
+
+De gebruikte hashing methode, aantal herhalingen van de hashing en het salt staan opgeslagen in de string welke wordt teruggegeven. Wanneer een wachtwoord gecontrolleerd moet worden, wordt deze data gebruikt om te controleren of het wachtwoord daadwerkelijk klopt.
+
+Door gebruik te maken van phpass is het wachtwoord op een veilig manier opgeslagen en niet vatbaar voor rainbow tables en brute force op de hash zelf.
+
+phpBB3.1 zal mogelijk als minimale PHP versie PHP 5.3 hebben, waardoor tegen die tijd mogelijk ook de overige hashing methode aan phpBB toegevoegd zullen worden. 

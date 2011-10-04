@@ -1,13 +1,5 @@
 \hoofdstuk{Conclusies en aanbevelingen}
+Sinds phpBB2 is er binnen phpBB al een groot aantal dingen gewijzigd met betrekking tot het denken over veiligheid en zijn er intern richtlijnen gemaakt om security problemen te voorkomen. Hierbij is niet alleen gekeken naar de beste manier om te voorkomen van security issues maar ook naar hoe te handelen wanneer er dan toch nog issues gevonden zijn. Door daadwerkelijk bezig te zijn met security heeft phpBB sinds de release van phpBB 3.0.0 in december 2007 geen enkel groot security issue gehad\cite{bib.phpbb.secunia}\footnote{Het aantal issues wat secunia meld is niet geheel correct. Bijvoorbeeld SA38837 is geintroduceerd in versie 3.0.7 en enkele dagen daarna al opgelost, secunia zegt echter dat dit in alle versies voor phpBB 3.0.7-pl1 zit. Sommige andere issues zijn door phpBB wel gemarkeerd als security issue, maar zijn eigenlijk meer issues welke problemen voorkomen als dat het issues zelf zijn.}. Dit laat dus zien dat phpBB sinds 3.0.0 eigenlijk goed verbeterd is in vergelijkbaar met phpBB2. 
 
-Conclusies en aanbevelingen moeten verzameld worden in een apart en
-herkenbaar deel van het verslag. Hoewel in het hoofdverslag op diverse
-plaatsen conclusies getrokken kunnen worden, moeten de belangrijkste
-conclusies samengevoegd en samengevat worden. 
-
-
-Belangrijk is dat het verschil tussen objectief controleerbare
-conclusies en subjectieve aanbevelingen duidelijk wordt aangegeven.
-Ook is het aan te bevelen om de belangrijkste conclusies conform de
-opdrachtomschrijving te formuleren.
-
+Er valt natuurlijk altijd iets te verbeteren, en dat is ook bij phpBB het geval. In sommige gevallen wordt er nog steeds niet altijd netjes gehouden aan de richtlijnen welke zijn opgesteld. Hierdoor onstaan in sommige gevallen problemen met user input welke eigenlijk voorkomen hadden kunnen worden. Om deze reden zal de volgende major versie dan ook een systeem bevatten welke niet toestaat dat een developer data direct opvraagd maar echt via de interface te werk gaat. Op deze manier wordt er altijd voor gezorgd dat data daadwerkelijk correct afgehandeld wordt.
+Verder wordt er sinds versie 3.1 ook niet zomaar nieuwe code toegelaten. Voordat code in de development branch wordt toegelaten moet eerst een andere developer buiten de developer die de code geschreven heeft gecontroleerd worden op problemen. Op deze manier wordt er op een vroegtijdig moment voor gezorgd dat er geen security issues worden geintroduceerd in nieuwe code.
