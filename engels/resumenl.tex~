@@ -1,0 +1,200 @@
+% resume.tex
+% vim:set ft=tex spell:
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{tgpagella}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+% indentsection style, used for sections that aren't already in lists
+% that need indentation to the level of all text in the document
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% opposite of above; bump a section back toward the left margin
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+% and the actual content starts here
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Paul Sohier}}
+
+Paul Desmondsingel 166\ \ \textbullet
+%\ \ Suite\ 1001\ \ \textbullet
+\ \ 3069RW Rotterdam\ \ 
+\ 
+\\
+06 198 233 70\ \ \textbullet
+\ \ paul@paulsohier.nl
+\end{center}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Ervaringen}
+
+\begin{itemize}
+	\parskip=0.1em
+
+	\item 
+	\headerrow
+		{\textbf{Hoge School Rotterdam}}
+		{\textbf{Rotterdam}}
+	\\
+	\headerrow
+		{\emph{Student assistent}}
+		{\emph{2010 -- 2011}}
+	\begin{itemize*}
+        \item Toezien op wekelijkse tentamens
+        \item Beheer van aanwezige hardware en uitlenen spullen
+	\end{itemize*}
+
+        \parskip=0.1em
+        \item
+          \headerrow
+          {\textbf{Hoge School Rotterdam}}
+          {\textbf{Rotterdam}}
+            \\
+            \headerrow
+            {\emph{Docent}}
+            {\emph{2011 -- heden}}
+            \begin{itemize*}
+              \item Lesmateriaal geschreven voor het vak Linux (http://www.hosthuis.nl/linux/)
+              \item Wekelijkse presentaties over de theorie
+              \item Wekelijkse beoordelen en begeleiden van studenten
+            \end{itemize*}
+        \parskip=0.1em
+        \item
+          \headerrow
+          {\textbf{Carrier Transicold}}
+          {\textbf{Rotterdam}}
+          \\
+          \headerrow
+          {\emph{Stagair reparatiewerkplaats}}
+          {\emph{2008 -- 2008}}
+          \begin{itemize*}
+            \item Reparatie diverse type vrachtwagenkoeling
+            \item Onderzoek naar communicatiestandaarden 
+          \end{itemize*}
+
+        \parskip=0.1em
+        \item
+          \headerrow
+          {\textbf{ABB}}
+          {\textbf{Rotterdam}}
+          \\
+          \headerrow
+          {\emph{Stagair elektronica werkplaats}}
+          {\emph{2006-2007}}
+          \begin{itemize*}
+            \item Ontwikkeling van testmethode voor frequentieregelaars
+          \end{itemize*}
+\end{itemize}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Scholing}
+
+\begin{itemize}
+	\parskip=0.1em
+
+	\item 
+	\headerrow
+		{\textbf{Hoge School Rotterdam}}
+		{\textbf{Rotterdam}}
+	\\
+	\headerrow
+		{\emph{Technische Informatica}}
+		{\emph{2009 -- heden}}
+	\begin{itemize*}
+          \item Onderzoek en bouw van een 3D printer
+          \item Ontwikkeling van een elektronische tentamen systeem         
+	\end{itemize*}
+
+        \item
+          \headerrow
+          {\textbf{ROC Zadkine}}
+          {\textbf{Rotterdam}}
+          \\
+          \headerrow
+          {\emph{MBO Elektronica}}
+          {\emph{2004 -- 2008}}
+
+\end{itemize}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Open Source/Vrijwilligerswerk}
+
+\begin{itemize}
+	\parskip=0.1em
+
+	\item
+	\headerrow
+		{\textbf{phpBB}}
+		{\textbf{}}
+	\\
+	\headerrow
+		{\emph{MODifications team member}}
+		{\emph{2006 -- heden}}
+	\begin{itemize*}
+          \item Verantwoordelijk voor interne veiligheid
+          \item Als teamleider verantwoordelijk voor validatie
+          \item Software ontworpen voor snellere validatie
+          \item Diverse presentaties gegeven over veiligheid en phpBB
+	\end{itemize*}
+
+        \item
+          \headerrow{\textbf{Vrijwillgerswerk sportclub}}{\textbf{}}
+          \\
+          \headerrow{}{\emph{2010 -- heden}}
+          \begin{itemize*}
+          \item Maandelijks bardienst in kantine
+            \item Sociaale hygiene behaald voor de vereniging
+            \item Maken van schema's voor de bardiensten in de kantine
+            \item Advies over gezonde kantine voor de jeugdleden
+          \end{itemize*}
+\end{itemize}
+
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Technische vaardigheden}
+
+\begin{indentsection}{\parindent}
+\hyphenpenalty=1000
+\begin{description*}
+	\item[Talen:]
+	C, \CPP, Java, JavaScript, \LaTeX, PHP, shell scripting, SQL
+	\item[Open Source contributies:]
+	phpBB, Debian
+        \item[Overige:] Derde op de Euroskills elektronica competitie
+\end{description*}
+\end{indentsection}
+
+\end{document}
