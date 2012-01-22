@@ -3,8 +3,15 @@ git rm opdr1/*.class -r
 git rm opdr1/*~ -r
 git rm opdr2/*/*.class -r
 git rm opdr2/*/*~ -r
-git rm opdr1/doc/ -r
-git rm opdr2/*/doc/ -r
+git rm opdr1/docs/ -r
+git rm opdr2/*/docs/ -r
+
+rm opdr1/*.class -r
+rm opdr1/*~ -r
+rm opdr2/*/*.class -r
+rm opdr2/*/*~ -r
+rm opdr1/docs/ -r
+rm opdr2/*/docs/ -r 
 
 javadoc -d opdr1/docs/ -sourcepath opdr1/*.java
 

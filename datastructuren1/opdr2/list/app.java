@@ -1,7 +1,7 @@
 public class app
 {
-    public static void main(String[] arg)
-    {
+	public static void main(String[] arg)
+	{
 	list st = new list();
 	for (int i = 0; i < 20; i++)
 	{
@@ -34,19 +34,19 @@ public class app
 	System.out.println("===============================================");
 	st.printStack();
 	System.out.println("===============================================TAIL");
-	
+
 	last = st.tail();
 	last.printStudent();
-	
+
 	System.out.println("===============================================");
 	st.printStack();
-	
+
 	System.out.println("===============================================Push(index 3)");
 	st.push(last, 3);
-	
+
 	System.out.println("===============================================");
 	st.printStack();
-	
+
 	System.out.println("===============================================Check last exists");
 	if(st.peek(last))
 	{
@@ -58,9 +58,9 @@ public class app
 	}
 	System.out.println("===============================================delete(index 3) (And compare)");
 	student lst = st.delete(3);
-	
+
 	lst.printStudent();
-	
+
 	if (lst.getStudent() == last.getStudent())
 	{
 		System.out.println("OK");
@@ -69,14 +69,14 @@ public class app
 	{
 		System.out.println("FAULT!");
 	}
-	
+
 	System.out.println("===============================================");
 	st.printStack();
-	
+
 	System.out.println("===============================================push with high index");	
 	st.push(lst, st.getSize() + 100);
 
 	System.out.println("===============================================");
 	st.printStack();	
-    }
+	}
 }

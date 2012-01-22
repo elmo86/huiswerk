@@ -3,8 +3,8 @@ git rm opdr1/*.class -r
 git rm opdr1/*~ -r
 git rm opdr2/*/*.class -r
 git rm opdr2/*/*~ -r
-git rm opdr1/docs/ -r
-git rm opdr2/*/docs/ -r
+git rm opdr1/docs/ -rf
+git rm opdr2/*/docs/ -rf
 
 rm opdr1/*.class -r
 rm opdr1/*~ -r
