@@ -25,7 +25,7 @@ public class list
      **/
     public void push(student s)
     {
-    	push(s, getSize());
+	push(s, getSize());
     }
 
     /**

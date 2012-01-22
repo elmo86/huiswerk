@@ -79,9 +79,9 @@ public class student
     public boolean setGeslacht(String data)
     {
 	if (data != "f" && data != "m")
-	    {
+	{
 		return false;
-	    }
+	}
 	geslacht = data;
 
 	return true;

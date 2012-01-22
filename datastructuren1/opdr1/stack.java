@@ -61,20 +61,20 @@ public class stack
 	studentElement tmp = start;
 
 	for (int i = 0; i < size -2; i++) // size - 1 om het laatste element te krijgen.
-	    {
+	{
 		tmp = tmp.getVolgend();
-	    }
+	}
 	try
-	    {
-	    	if (tmp != null)
+	{
+		if (tmp != null)
 			tmp.setVolgend(null);  // verwijder laatste element!
 		size--;
-	    }
+	}
 	catch (studentStackExistsException e)
-	    {
+	{
 		System.out.println(e);
 		return null;
-	    }
+	}
 
 	if (last != null)
 		return last.getStudent();
@@ -91,15 +91,15 @@ public class stack
     {
 	studentElement tmp = start;
 	for (int i = 0; i < getSize(); i++)
-	    {
+	{
 		student t = tmp.getStudent();
 
 		if (s.getStudent() == t.getStudent())
-		    {
+		{
 			return true;
-		    }
+		}
 		tmp = tmp.getVolgend();	     
-	    }
+	}
 
 	return false;
     }
@@ -111,10 +111,10 @@ public class stack
     {
 	studentElement tmp = start;
 	for (int i = 0; i < getSize(); i++)
-	    {
+	{
 		tmp.getStudent().printStudent();
 		tmp = tmp.getVolgend();
-	    }
+	}
     }
 
     /**
@@ -124,13 +124,13 @@ public class stack
     {
 	studentElement tmp = start;
 	for (int i = 0; i < getSize(); i++)
-	    {
+	{
 		if (tmp.getStudent().getGeslacht() == "m")
-		    {
+		{
 			tmp.getStudent().printStudent();
-		    }
+		}
 		tmp = tmp.getVolgend();
-	    }
+	}
     }
     /** 
      * Print alle vrouwen
@@ -139,13 +139,13 @@ public class stack
     {
 	studentElement tmp = start;
 	for (int i = 0; i < getSize(); i++)
-	    {
+	{
 		if (tmp.getStudent().getGeslacht() == "f")
-		    {
+		{
 			tmp.getStudent().printStudent();
-		    }
+		}
 		tmp = tmp.getVolgend();
-	    }
+	}
     }
     /**
      * Haal het laatste studentElement op uit de stack
@@ -156,16 +156,16 @@ public class stack
     {
 	studentElement vorig = start;
 	for (int i = 0; i < size; i++)
-	    {
+	{
 		if (vorig.volgend())
-		    {
+		{
 			vorig = vorig.getVolgend();
-		    }
+		}
 		else
-		    {
+		{
 			return vorig;
-		    }
-	    }
+		}
+	}
 	System.out.println("ERROR!");
 	return null;
     }

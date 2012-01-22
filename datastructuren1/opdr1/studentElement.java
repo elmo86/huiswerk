@@ -44,13 +44,13 @@ public class studentElement
     public boolean volgend()
     {
 	if (volgend == null)
-	    {
+	{
 		return false;
-	    }
+	}
 	else
-	    {
+	{
 		return true;
-	    }
+	}
     }
 
     /**
@@ -60,13 +60,13 @@ public class studentElement
     public studentElement getVolgend()
     {
 	if (volgend())
-	    {
+	{
 		return volgend;
-	    }
+	}
 	else
-	    {
+	{
 		return null;
-	    }
+	}
     }
     /**
      * Geef een nieuw element op in de lijst
@@ -76,12 +76,12 @@ public class studentElement
     public void setVolgend(studentElement v) throws studentStackExistsException
     {
 	if (!volgend() || v == null) // Wanneer v null is willen we volgend verwijderen
-	    {
+	{
 		volgend = v;
-	    }
+	}
 	else
-	    {
+	{
 		throw new studentStackExistsException();
-	    }
+	}
     }
 }

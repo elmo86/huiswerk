@@ -1,0 +1,13 @@
+#!/bin/bash
+git rm opdr1/*.class -r
+git rm opdr1/*~ -r
+git rm opdr2/*/*.class -r
+git rm opdr2/*/*~ -r
+git rm opdr1/doc/ -r
+git rm opdr2/*/doc/ -r
+
+javadoc -d opdr1/docs/ -sourcepath opdr1/*.java
+
+javadoc -d opdr2/list/docs/ -sourcepath opdr2/list/*.java
+javadoc -d opdr2/sortedlist/docs/ -sourcepath opdr2/sortedlist/*.java
+javadoc -d opdr2/queue/docs/ -sourcepath opdr2/queue/*.java

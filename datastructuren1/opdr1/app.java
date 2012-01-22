@@ -4,20 +4,20 @@ public class app
     {
 	stack st = new stack();
 	for (int i = 0; i < 20; i++)
-	    {
+	{
 		// Data
 		int leeftijd = 18 + (i / 2);
 		String geslacht = ((i % 4) == 0) ? "f" : "m";
 		String naam = "student " + i;
 		int student = leeftijd * i;
-		
+
 		student s = new student(student, naam, geslacht, leeftijd);
-		
+
 		if (!st.peek(s))
-		    st.push(s);
+			st.push(s);
 		else
-		    System.out.println("Error?");
-	    }
+			System.out.println("Error?");
+	}
 
 	System.out.println("===============================================");
 	st.printStack();
