@@ -70,7 +70,7 @@ public class studentElement
     }
     /**
      * Geef een nieuw element op in de lijst
-     * @param v Volgend studentElement
+     * @param studentElement v Volgend studentElement
      * @throws studentStackExistsException
      **/
     public void setVolgend(studentElement v) throws studentStackExistsException

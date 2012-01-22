@@ -21,7 +21,7 @@ public class studentElement
 
     /**
      * Sla student op voor dit element
-     * @param data data Student om op te slaan
+     * @param data Student om op te slaan
      **/
     public void setStudent(student data)
     {

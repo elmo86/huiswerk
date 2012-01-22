@@ -66,8 +66,7 @@ public class stack
 	    }
 	try
 	    {
-	    	if (tmp != null)
-			tmp.setVolgend(null);  // verwijder laatste element!
+		tmp.setVolgend(null);  // verwijder laatste element!
 		size--;
 	    }
 	catch (studentStackExistsException e)

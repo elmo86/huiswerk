@@ -1,4 +1,4 @@
-public class stack
+public class queue
 {
     private studentElement start;
     private int size;
@@ -6,7 +6,7 @@ public class stack
     /**
      *
      **/
-    public stack()
+    public queue()
     {
 
     }
@@ -52,34 +52,23 @@ public class stack
     }
 
     /**
-     * Geeft de laatste student terug
-     * @return student Laatste student
+     * Geeft de eerste student terug
+     * @return student Eerste student
      **/
     public student pop()
     {
-	studentElement last = getLast();
-	studentElement tmp = start;
-
-	for (int i = 0; i < size -2; i++) // size - 1 om het laatste element te krijgen.
-	    {
-		tmp = tmp.getVolgend();
-	    }
-	try
-	    {
-	    	if (tmp != null)
-			tmp.setVolgend(null);  // verwijder laatste element!
-		size--;
-	    }
-	catch (studentStackExistsException e)
-	    {
-		System.out.println(e);
-		return null;
-	    }
-
-	if (last != null)
-		return last.getStudent();
-	else
-		return null;
+    	studentElement returned = start;
+    	
+    	if (start.volgend())
+    	{
+    		start = start.getVolgend();
+    	}
+    	else
+    	{
+    		start = null;
+    	}
+    	size--;
+	return returned.getStudent();
     }
 
     /**
@@ -91,15 +80,15 @@ public class stack
     {
 	studentElement tmp = start;
 	for (int i = 0; i < getSize(); i++)
-	    {
-		student t = tmp.getStudent();
+	{
+	    student t = tmp.getStudent();
 
-		if (s.getStudent() == t.getStudent())
-		    {
-			return true;
-		    }
-		tmp = tmp.getVolgend();	     
+	    if (s.getStudent() == t.getStudent())
+	    {
+		return true;
 	    }
+	    tmp = tmp.getVolgend();	     
+	}
 
 	return false;
     }

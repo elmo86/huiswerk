@@ -12,7 +12,7 @@ public class studentElement
 
     /**
      * Constructor
-     * @param data student voor dit Element
+     * @param student student voor dit Element
      **/
     public studentElement(student data)
     {
@@ -21,7 +21,7 @@ public class studentElement
 
     /**
      * Sla student op voor dit element
-     * @param data data Student om op te slaan
+     * @param student data Student om op te slaan
      **/
     public void setStudent(student data)
     {
@@ -70,7 +70,7 @@ public class studentElement
     }
     /**
      * Geef een nieuw element op in de lijst
-     * @param v Volgend studentElement
+     * @param studentElement v Volgend studentElement
      * @throws studentStackExistsException
      **/
     public void setVolgend(studentElement v) throws studentStackExistsException
