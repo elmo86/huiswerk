@@ -4,8 +4,8 @@
  * s in de list op positie index en verwijdert deze uit de list
  * Reden: Methode naam is zelfde als om student toe te voegen + parameter is niet logische
  * Vervanging: delete(int index); verwijderd een element op locatie index en geeft hem terug.
+ * @author Paul Sohier
  **/
-
 public class list
 {
 	private studentElement start;

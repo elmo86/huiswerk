@@ -1,3 +1,6 @@
+/**
+ * @author Paul Sohier
+ **/
 public class app
 {
 	public static void main(String[] arg)

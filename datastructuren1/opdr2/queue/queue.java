@@ -1,3 +1,6 @@
+/**
+ * @author Paul Sohier
+ **/
 public class queue
 {
 	private studentElement start;

@@ -1,5 +1,7 @@
 import java.util.*;
-
+/**
+ * @author Paul Sohier
+ **/
 class administratie
 {
 	private HashMap<String, student> studenten;
@@ -40,7 +42,6 @@ class administratie
 	 **/
 	public void addVak(String studierichting, String module, int jaar)
 	{
-		
 		System.out.println("Created vak: " + module);
 		
 		Iterator itr = studenten.entrySet().iterator();

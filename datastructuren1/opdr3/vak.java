@@ -1,11 +1,18 @@
 import java.util.LinkedList;
-
+/**
+ * @author Paul Sohier
+ **/
 class vak
 {
 	String modulecode;
 	int cijfer;
 	int jaar;
 	
+	/**
+	 * Maak het vak aan
+	 * @param code Vakcode
+	 * @param jaar Jaartal waar het vak in wordt gegeven
+	 **/
 	public vak(String code, int jaar)
 	{
 		setModule(code);

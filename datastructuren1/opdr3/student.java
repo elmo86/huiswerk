@@ -1,5 +1,7 @@
 import java.util.*;
-
+/**
+ * @author Paul Sohier
+ **/
 class student
 {
 	private String student;
@@ -10,12 +12,23 @@ class student
 	private HashMap<String, vak> behaald;
 	private HashMap<String, vak> onbehaald;
 	
+	/**
+	 * 
+	 **/
 	public student()
 	{
 		behaald = new HashMap<String, vak>();
 		onbehaald = new HashMap<String, vak>();	
 	}
 	
+	/**
+	 * Voeg student data toe aan het object.
+	 * @param student Studentnummer
+	 * @param naam Naam
+	 * @param geslacht Geslacht
+	 * @param klas Klas
+	 * @param studierichting Studierichting van de student
+	 **/
 	public student (String student, String naam, String geslacht, String klas, String studierichting)
 	{
 		behaald = new HashMap<String, vak>();
@@ -144,6 +157,10 @@ class student
 		return tmp;
 	}
 	
+	/**
+	 * Vraag een hashmap op van alle vakken 
+	 * @retur Hashmap met de vakken
+	 **/
 	public HashMap<String, vak> getHashVakken()
 	{
 		HashMap<String, vak> tmp = new HashMap<String, vak>();
