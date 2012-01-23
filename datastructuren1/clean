@@ -3,8 +3,11 @@ git rm opdr1/*.class -r
 git rm opdr1/*~ -r
 git rm opdr2/*/*.class -r
 git rm opdr2/*/*~ -r
+git rm opdr3/*.class -r
+git rm opdr3/*~ -r
 git rm opdr1/docs/ -rf
 git rm opdr2/*/docs/ -rf
+git rm opdr3/docs/ -rf
 
 rm opdr1/*.class -r
 rm opdr1/*~ -r
@@ -12,9 +15,13 @@ rm opdr2/*/*.class -r
 rm opdr2/*/*~ -r
 rm opdr1/docs/ -r
 rm opdr2/*/docs/ -r 
+rm opdr3/*.class -r
+rm opdr3/*~ -r
+rm opdr3/docs/ -rf
 
 javadoc -d opdr1/docs/ -sourcepath opdr1/*.java
 
 javadoc -d opdr2/list/docs/ -sourcepath opdr2/list/*.java
 javadoc -d opdr2/sortedlist/docs/ -sourcepath opdr2/sortedlist/*.java
 javadoc -d opdr2/queue/docs/ -sourcepath opdr2/queue/*.java
+javadoc -d opdr3/docs/ -sourcepath opdr3/*.java
