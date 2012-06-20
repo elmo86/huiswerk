@@ -1,0 +1,63 @@
+\chapter{Recursie}
+\section{Opdracht 1}
+Leidt de recurrente betrekking af voor het aantal verbindingslijnstukken tussen $n$ punten.
+
+\section{Opdracht 2}
+De volgende C-functie berekent de faculteit van een natuurlijk getal $n\geq 0$:
+\begin{lstlisting}
+long faculteit (int n)
+{
+  if (n == 0)
+  {
+    return 1;
+  }
+  else
+  {
+    return n*faculteit(n-1);
+  }
+}
+\end{lstlisting}
+Maak een iteratieve versie van deze functie.
+
+\section{Opdracht 3}
+Maak een recursief algortime voor de torens van Hanoi.
+
+\section{Opdracht 4}
+Bepaal het aantal stappen $T_n$ voor het verplaatsen van $n$ schijven bij de torens van Hanoi, indien rechtstreekse verplaatsingen van toren A naar toren C verboden zijn. Elke schijf moet langs toren B.
+
+\section{Opdracht 5}
+Bereken $alg\_a(n)$ en $alg\_b(n)$ voor $n=1\ldots 5$. Bereken de effici\"{e}ntie van algoritme $alg\_a$ en van algoritme $alg\_b$ in O-notatie:
+\begin{itemize}
+\item[(a)]\begin{lstlisting}
+alg_a(n):resultaat
+if n > 1  then
+return (alg_a(n-1)+alg_a(n-1))
+else
+return (1)
+\end{lstlisting}
+\item[(b)]\begin{lstlisting}
+alg_b(n): resultaat
+if n > 1 then
+return 2 * alg_b(n-1))
+else
+return 1
+\end{lstlisting}
+\end{itemize}
+
+\section{Opdracht 7}
+Leidt een recurrente betrekking af voor de berekening van een $x^p$, waarbij  $x$ een re\"{e}l getal en $p$ een natuurlijk getal van $n$ bits. Maak hiervan een recursief algoritme. Bepaal de tijdcomplexiteit voor dit algoritme op dezelfde processortype als die uit de vorige opgave.
+
+\section{Opdracht 11}
+Een ingewikkelde vorm van recursie is de functie van \emph{Ackermann}:
+
+\begin{displaymath}
+ack(m,n)=\left\{ 
+\begin{array}{ll}
+n+1 & als m = 0 en n \geq 0\\
+ack(m-1,1) & als m < 0 en n = 0\\
+Ack(m-1, ack(m,n-1)) & als m > 0 en n > 0\\
+\end{array}
+\right|
+\end{displaymath}
+
+Toon aan dat $Ack(2,3)=9$.

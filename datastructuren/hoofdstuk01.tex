@@ -8,12 +8,29 @@ Bepaal de herhalingsfrequentie $T(n)$ van:
     \item \texttt{i=0; while(i < n) \{a[i] = 0\}}
   \end{itemize}
 
+\texttt{Antwoord:}
+
+\begin{itemize}
+  \item $T(1)$
+  \item $T(n^2 - (n - 1))$
+  \item $T(0)$
+  \item $T(\infty) v 0 keer$
+\end{itemize}
+
 \section{Opdracht 2}
 Bepaal de O-notatie van:
 \begin{itemize}
   \item $T(n)=17n^3-13n^2+10n+2000$
   \item $T(N)=3^n-13n$
   \item $T(n)=20log_2n+n^2$
+\end{itemize}
+
+\texttt{antwoord:}
+
+\begin{itemize}
+  \item $T(n) = 0(n^3)$
+  \item $T(n) = 0(n^2)$
+  \item $T(n) = 0(n^2)$
 \end{itemize}
 
 \section{Opdracht 3}
@@ -53,11 +70,35 @@ while(i<n){
 \end{lstlisting}
 Bepaal van \emph{InsertionSort} en \emph{SelectionSort} de effici\"{e}ntie in P-notatie.
 
+\texttt{Antwoord:}
+
+SelectionSort: $O(n^2)$
+InsertionSort: $O(n^2)$
+
 \section{Opdracht 4}
 \emph{BubbleSort} maakt gebruik van herhaald verwisselen van buurelementen in een lijst. Een element wordt naar voren verplaatst indien het kleiner is dan het buurelement. Geef de tijdcomplexiteit in O-notatie van het \emph{BubbleSort} algoritme. Is dit slechter dan de complexiteit van \emph{SelectionSort} en \emph{InsertionSort}?
 
+\texttt{antwoord:}
+
+BubbleSort: $O(n^2)$
+
+\section{Opdracht 5}
+Bepaal de tijdcomplexitijd in de O-Notatie van een algoritme om alle permutaties van \emph{n} verschillende voorwerpen te genereren.
+
+\texttt{antwoord:}
+
+$O(n!)$
+
+\section{Opdracht 6}
+Bepaal de tijdcomplexiteit in O-Notatie om de determinant van een $n x n$ matrix te bepalen.
+
+\texttt{antwoord}
+
+$O(n^2)$, de formule voor het berekenen is: $\det(a) = \sum_{\sigma \in S_n} \prod_{i=1}^n A_{i,\sigma(i)}$, wat dus een dubbel geneste forloop is.
+
 \section{Opdracht 7}
 Een \emph{polynoom} $f(x)\sum_{n}^{i=0} a_ix^j$ ($a0\ldots a_n$) zijn co\"{e}ffici\"{e}nten) wordt meestal uitgeschreven als:
+
 \begin{displaymath}
 f(x)=a_nx^n+a_{n-1}x^{n-1}+a_{n-2}x^{n-2}+\ldots +a_1x^1+a0
 \end{displaymath}
@@ -66,3 +107,17 @@ Wij kunnen de polynoon $f(x)$ herschrijven met de \emph{regel van Horner}:
   f(x)=((\ldots((a_nx+a_{n-a})x+a_{n-2})x\ldots)x+a1)x+a0
 \end{displaymath}
 
+\texttt{antwoord:}
+
+De orginele notatie is $n!$ vermenigvuldigingen, n optellingen. Bij de verbetering is het $n$ vermenigvuldigingen en $n$ optellingen.
+
+\section{Opdracht 9}
+Het is bekend dat twee priemgetallen redelijk snel tot een product vermenigvuldigd kunnen worden. Het omgekeerde, het ontbinden van zo'n product in twee priemfactoren, kost meer moeite. In verband met een redelijk werkverdeling tussen docent en studenten zijn docenten dol op dit soort problemen. Wij nemen problemen, die door de docent snel geconstrueerd kunnen worden en voor de studenten lastig op te lossen zijn, in de klasse Ideale-problemen op. Geef enkele voorbeelden uit de klasse Ideale-problemen. Is er, naast het onderwijs, nog een een gebeid waar Ideale-problemen kunnen worden toegepast?
+
+\texttt{antwoord:}
+
+\begin{itemize}
+  \item Een lastige willekeurge formule opschrijven -> ga maar differentieren of intergreren.
+  \item Los software probleem X op, bijvoorbeeld het handelsreizigersprobleem -> algoritmiek bedenken. Dinning philosophers).
+\end{itemize}
+Voor het berekenen van een unieke code om de echtheid van bijvoorbeeld een bepaald bestand te controleren. Het ICT-gebied dus.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.11.24)  18 JAN 2012 10:38
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.11.24)  18 JAN 2012 11:15
 entering extended mode
  %&-line parsing enabled.
 **resumenl.tex
@@ -515,7 +515,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 Here is how much of TeX's memory you used:
  1830 strings out of 495006
  23857 string characters out of 1181409
- 75252 words of memory out of 3000000
+ 74252 words of memory out of 3000000
  5017 multiletter control sequences out of 15000+50000
  33641 words of font info for 26 fonts, out of 3000000 for 9000
  68 hyphenation exceptions out of 8191
@@ -525,7 +525,7 @@ are/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texmf/fonts/enc/dvips/t
 ex-gyre/q-ts1.enc}</usr/share/texmf/fonts/type1/public/tex-gyre/qplb.pfb></usr/
 share/texmf/fonts/type1/public/tex-gyre/qplr.pfb></usr/share/texmf/fonts/type1/
 public/tex-gyre/qplri.pfb>
-Output written on resumenl.pdf (1 page, 85056 bytes).
+Output written on resumenl.pdf (1 page, 85003 bytes).
 PDF statistics:
  22 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

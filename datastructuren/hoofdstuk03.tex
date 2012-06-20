@@ -2,11 +2,19 @@
 \section{Opdracht 1}
 Een probleem, dat voor het eerst geformuleerd werd door een Chinese wiskundige, luidt: Een \emph{Chinese postbode} moet lopend de post bezorgen. Langs elke weg (een tak met een positieve afstandswaarde) staan brievenbussen. De optimale route heeft de minimale afstand. In wele type grafen is een optimale oplossing aanwezig?
 
+\texttt{antwoord:}
+
+Euler: Een zogeheten Euler-wnandeling of zelfs een dergelijke wandeling te maken zodat deze begint en eindigt in dezelfde knoop (Euler-cykel).
+
 \section{Opdracht 2}
 Een handelsreiziger moet vanaf een basis een aantal steden bezoeken met de kortste reisafstand en daarna terugkeren op zijn thuisbasis. In welk type grafen is een optimale oplossing aanwezig?
 
+\texttt{antwoord:}
+
+Ongericht gewogen grafen.
+
 \section{Opdracht 3}
-Kan de volgende graaf zonder sijnende lijnen getekend worden op een plat vlak?
+Kan de volgende graaf zonder snijdende lijnen getekend worden op een plat vlak?
 \\
 \setlength{\unitlength}{1mm}
 \begin{picture}(6,6)
@@ -24,12 +32,34 @@ Kan de volgende graaf zonder sijnende lijnen getekend worden op een plat vlak?
   \put(0,6){\line(1,-1){6}}
 \end{picture}
 
+\texttt{antwoord:}
+
+Ja.
+
+\section{Opdracht 4}
+Wat is het minimaal aantal kleuren dat nodig is om de knopen van de graaf uit vraagstruk 3 te kleuren zodanig dat adjacente knopen niet dezelfde kleur hebben?
+
+\texttt{antwoord:}
+
+4 kleuren.
+
+\section{Opdracht 5}
+Verzin een praktische voorbeeld van een knopgewogen graaf.
+
+\texttt{antwoord:}
+
+Steden met het aantal inwoners, een stad met meer inwoners is van meer betekenis voor een bedrijf om daar een vestiging te openen.
+
 \section{Opdracht 6}
 In een graaf zijn vaak meer dan \"{e}\"{e}n opspannende boom te vinden. Bepaal van de graaf uit vraagstuk 4 het aantal opspannende bomen.
+
+\texttt{antwoord:}
+
+16, 5 mogelijkheden voor het pad van een boom, met steeds vier start mogelijkheden. Daarna nog 4 eraf, omdat twee bomen maar 2 mogelijkheden hebben in plaats van 4. In totaal dus 16.
 
 \section{Opdracht 7}
 Bewijs dat een opspannende boom in een samenhangende graaf met $n$ knopen en $m$ takken uit $n-1$ takken bestaat.
 
-\section{Opdracht 9}
-Wat stelt de rij en de kolomsom van een adjaceentiematrix van een gerichte graaf voor?
+\texttt{antwoord:}
+2 startpunten betekend 1 pad. Drie knooppunten is 1 pad meer. Kortom iedere extra node is een extra pad.
 
